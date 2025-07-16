@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Backend",
+            "type": "shell",
+            "command": ".venv\\Scripts\\activate && uvicorn main:app --reload",
+            "options": {
+                "cwd": "${workspaceFolder}/Backend"
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "server_tasks",
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Run Frontend",
+            "type": "shell",
+            "command": "npm run dev",
+            "options": {
+                "cwd": "${workspaceFolder}/Frontend"
+            },
+            "isBackground": true,
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "server_tasks",
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Start All Servers",
+            "dependsOn": [
+                "Run Backend",
+                "Run Frontend"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "group": "server_tasks"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "label": "Start All Dev Servers on Open",
+            "dependsOn": ["Start All Servers"],
+            "preLaunchTask": "Start All Servers"
+        }
+    ]
+}
