@@ -89,33 +89,29 @@ def get_db_schema():
         return {"status": "error", "message": f"DB 스키마 조회 중 오류 발생: {str(e)}"}
         
 
-def get_db_schema_for_tables(table_names: list[str]):
-    from database import engine # engine을 함수 내에서 임포트하여 순환 참조 방지
-    
+def get_db_schema_for_tables(table_names: list):
+    """
+    주어진 테이블 이름 목록에 대해서만 스키마 정보를 조회하여 반환합니다.
+    """
+    # engine 객체는 이 파일의 전역 범위에 이미 있으므로, 바로 사용하면 됩니다.
     inspector = inspect(engine)
-    db_schema = {}
-    
+    schema_info = {}
     try:
-        # DB에 실제 존재하는 모든 테이블 이름을 가져옴
-        all_table_names = inspector.get_table_names()
-        
+        # 인자로 받은 테이블 목록을 순회합니다.
         for table_name in table_names:
-            if table_name in all_table_names:
+            # 테이블이 실제로 존재하는지 확인 후 진행
+            if inspector.has_table(table_name):
                 columns = inspector.get_columns(table_name)
-                # 기존 get_db_schema와 동일한 형식으로 컬럼 정보 구성
-                db_schema[table_name] = [
-                    {
-                        "name": col["name"],
-                        "type": str(col["type"]),
-                        "nullable": col["nullable"],
-                        "primary_key": col.get("primary_key", False)
-                    }
-                    for col in columns
-                ]
-            else:
-                # 요청된 테이블이 DB에 존재하지 않는 경우
-                db_schema[table_name] = f"Error: Table '{table_name}' not found in the database."
-
-        return {"status": "success", "schema": db_schema}
+                column_info = []
+                for col in columns:
+                    column_info.append({
+                        "name": col['name'],
+                        "type": str(col['type']),
+                        "nullable": col['nullable'],
+                        "primary_key": col.get('primary_key', False)
+                    })
+                schema_info[table_name] = column_info
+        return {"status": "success", "schema": schema_info, "message": "특정 테이블 스키마 조회 완료"}
     except Exception as e:
-        return {"status": "error", "message": f"스키마 조회 중 오류 발생: {str(e)}"}
+        print(f"특정 테이블 스키마 조회 실패: {e}")
+        return {"status": "error", "message": f"특정 테이블 스키마 조회 중 오류 발생: {str(e)}"}

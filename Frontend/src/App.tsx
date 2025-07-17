@@ -103,13 +103,13 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center p-6 font-[Pretendard]">
       <div className="w-full max-w-3xl bg-white shadow-lg rounded-2xl p-8">
-        <h1 className="text-3xl font-bold text-indigo-600 mb-6 text-center">ToyGemini</h1>
+        <h1 className="text-3xl font-bold text-indigo-600 mb-6 text-center">Kaede</h1>
 
         <textarea
           ref={textareaRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="명령어를 입력하세요"
+          placeholder="카에데에게 말걸어주세요!"
           className="w-full p-4 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-transparent transition resize-none min-h-[120px] overflow-hidden"
         />
 
@@ -119,7 +119,7 @@ function App() {
             disabled={isLoading || input.trim() === ''}
             className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-6 rounded-xl transition disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Gemini에게 보내기
+            전송
           </button>
           {isLoading && (
             <button
@@ -135,7 +135,7 @@ function App() {
 
         <div>
           <h2 className="text-lg font-semibold text-gray-700 mb-2">
-            Gemini 응답:
+            카에데:
             {elapsedTime !== null && !isLoading && (
               <span className="text-sm text-gray-500 ml-2">⏱️ {elapsedTime}s</span>
             )}
@@ -143,7 +143,7 @@ function App() {
           {/* ✨ 여기 클래스를 'markdown-body' 대신 'prose'로 변경합니다. */}
           {/* 또한, 텍스트가 시작될 때 스피너 자리에 붙어 나올 수 있도록 기본 justify-start로 설정합니다. */}
           {/* ✨ 여기 클래스에 'whitespace-normal'을 추가합니다. */}
-          <div className="bg-gray-100 p-4 rounded-xl text-gray-800 min-h-[100px] prose whitespace-normal">
+          <div className="bg-gray-100 p-4 rounded-xl text-gray-800 min-h-[100px] prose whitespace-pre-wrap">
             {isLoading && displayedResponse === '' ? (
               <div className="flex justify-center items-center h-[inherit]">
                 <Spinner />

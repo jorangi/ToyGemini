@@ -63,56 +63,82 @@ def resolve_command_path(raw_cmd: str) -> str:
             tokens[i] = f'"{str(abs_path)}"' # 변환된 절대 경로를 다시 따옴표로 감쌈
     return ' '.join(tokens)
 
+def sanitize_echo(cmd: str) -> str:
+    # echo로 시작하는 줄에서, > 전까지의 문자열이 특수문자(#, <, > 등)를 포함하면 따옴표 감싸기
+    m = re.match(r'(echo )(.+?)( >{1,2} .+)', cmd)
+    if m:
+        content = m.group(2).strip()
+        if any(x in content for x in '#<>'):
+            content = f'"{content}"'
+        return m.group(1) + content + m.group(3)
+    return cmd
+
+# commands_router.py 파일의 execute_shell 함수를 아래 코드로 교체하세요.
+import re # 파일 상단에 re 모듈을 import 해주세요.
 
 @router.post("/execute-shell")
 def execute_shell(req: CommandRequest):
+    # 1. 평소에는 실행을 금지할 명령어 목록은 그대로 둡니다.
     blocked = [
         'del', 'rm', 'format', 'shutdown', 'regedit', 'erase', 'rmdir',
-        'powershell', 'wsl', 'start', 'curl', 'ftp', 'runas', 'schtasks',
+        'wsl', 'start', 'curl', 'ftp', 'runas', 'schtasks',
         'net user', 'net localgroup', 'vssadmin', 'diskpart', 'bcdedit'
     ]
 
-    lowered = req.command.lower()
-    print(f"Checking blocked words in command: {lowered}")
+    command_to_run = req.command.strip()
+    is_forced = False
 
-    for bad in blocked:
-        if re.search(rf'\b{re.escape(bad)}\b', lowered):
-            raise HTTPException(status_code=400, detail=f"금지된 명령어입니다: {bad}")
+    # 2. 'forcecommand(...)' 패턴이 있는지 확인합니다.
+    force_match = re.match(r'^\s*forcecommand\((.*)\)\s*$', command_to_run, re.DOTALL)
+    
+    if force_match:
+        # 패턴이 일치하면, 안쪽의 실제 명령어만 추출하고 강제 실행 플래그를 True로 설정합니다.
+        command_to_run = force_match.group(1).strip()
+        is_forced = True
+        print(f"🛡️ 강제 실행 모드 감지. 실행할 명령어: {command_to_run}")
+    
+    # 3. 강제 실행 모드가 아닐 경우에만 금지된 명령어를 확인합니다.
+    if not is_forced:
+        lowered_cmd = command_to_run.lower()
+        for bad in blocked:
+            if re.search(rf'\b{re.escape(bad)}\b', lowered_cmd):
+                # 금지된 명령어일 경우, 400 오류와 함께 강제 실행 방법을 안내합니다.
+                raise HTTPException(
+                    status_code=400,
+                    detail=f"금지된 명령어입니다: '{bad}'. 강제 실행을 원하시면 'forcecommand({command_to_run})' 형식으로 요청하세요."
+                )
 
+    # 4. 최종적으로 실행할 명령어를 처리합니다. (이전과 동일)
     try:
-        # 경로 변환된 안전한 명령어를 가져옴
-        safe_cmd = resolve_command_path(req.command)
-        # 문자열 이스케이프 관련 문제 발생 가능성 제거 (필요시)
-        safe_cmd = safe_cmd.replace('\\"', '"').replace('\\\\', '\\')
+        raw_commands = command_to_run.split('\n')
+        commands = []
+        for line in raw_commands:
+            for part in line.split('&'):
+                cmd = part.strip()
+                if cmd:
+                    commands.append(sanitize_echo(cmd))
+
+        full_command = " & ".join(commands)
         
-        print("Executing command:", safe_cmd)
-
-        # ✨ 핵심 변경 사항: chcp 65001 추가 및 encoding='utf-8' 지정
-        # 'chcp 65001 > nul'로 코드 페이지를 UTF-8로 변경하고,
-        # 이어서 원래 명령어를 실행합니다. '&&'는 앞선 명령이 성공해야 다음을 실행합니다.
-        full_cmd_with_encoding = f"chcp 65001 > nul && {safe_cmd}"
-
+        print("실행:", full_command)
         result = subprocess.run(
-            full_cmd_with_encoding, # 변경된 전체 명령어
+            f'chcp 65001 > nul && {full_command}',
             capture_output=True,
             text=True,
             shell=True,
-            timeout=5,
+            timeout=30,
             cwd=ROOT_DIR,
-            encoding='utf-8', # ✨ subprocess가 UTF-8로 입출력을 처리하도록 명시
-            errors='replace' # 디코딩 오류 시 대체 문자로 처리
+            encoding='utf-8',
+            errors='replace'
         )
         
         stdout = result.stdout.strip()
-        stderr = result.stderr.strip()
-
-        # chcp 명령의 성공 메시지가 stdout에 포함될 수 있으므로 제거
         if "Active code page: 65001" in stdout:
             stdout = stdout.replace("Active code page: 65001", "").strip()
-
+            
         return {
             "stdout": stdout,
-            "stderr": stderr,
+            "stderr": result.stderr.strip(),
             "exit_code": result.returncode
         }
     except subprocess.TimeoutExpired:

@@ -20,6 +20,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ✅ 스트리밍 라우터 등록
+# gemini_router를 등록합니다.
 app.include_router(gemini_router)
-app.include_router(commands_router, prefix="/cmd", tags=["CommandShell"])
+# commands_router를 등록합니다. prefix를 제거하여 /write-file 주소를 그대로 사용하도록 합니다.
+app.include_router(commands_router)
+
