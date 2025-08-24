@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카라스노 vs 아오바죠사이</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #2c2c2c;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+        }
+        header h1 {
+            font-size: 3em;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 0 10px #ff4500, 0 0 20px #00ffff;
+            margin-bottom: 10px;
+        }
+        .vs {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #f0f0f0;
+            margin: 20px 0;
+        }
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        .team {
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #3a3a3a;
+        }
+        .team.karasuno {
+            border: 2px solid #ff6a00;
+            box-shadow: 0 0 15px #ff6a00;
+        }
+        .team.aobajohsai {
+            border: 2px solid #00d4d4;
+            box-shadow: 0 0 15px #00d4d4;
+        }
+        .team h2 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .team.karasuno h2 { color: #ff6a00; }
+        .team.aobajohsai h2 { color: #00d4d4; }
+        .team ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .team li {
+            background-color: #4a4a4a;
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .team li:hover {
+            transform: scale(1.05);
+            background-color: #5a5a5a;
+        }
+        .highlights {
+            margin-top: 40px;
+            background-color: #3a3a3a;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #ff4500;
+            border-right: 5px solid #00d4d4;
+        }
+        .highlights h2 {
+            font-size: 2em;
+            color: #ffffff;
+        }
+        .highlights p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>세기의 대결</h1>
+        </header>
+
+        <div class="teams">
+            <div class="team karasuno">
+                <h2>카라스노 고교</h2>
+                <ul>
+                    <li>히나타 쇼요 (MB)</li>
+                    <li>카게야마 토비오 (S)</li>
+                    <li>사와무라 다이치 (WS)</li>
+                    <li>니시노야 유 (L)</li>
+                </ul>
+            </div>
+            <div class="team aobajohsai">
+                <h2>아오바죠사이 고교</h2>
+                <ul>
+                    <li>오이카와 토오루 (S)</li>
+                    <li>이와이즈미 하지메 (WS)</li>
+                    <li>킨다이치 유타로 (MB)</li>
+                    <li>쿠니미 아키라 (WS)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="vs">VS</div>
+
+        <section class="highlights">
+            <h2>경기 하이라이트</h2>
+            <p>"타도 시라토리자와"를 외치는 두 팀의 숙명적인 라이벌 매치! 천재 세터 카게야마와 대왕님 오이카와의 자존심을 건 세터 대결, 그리고 "괴짜 속공"을 막으려는 아오바죠사이의 집요한 블로킹이 코트를 뜨겁게 달굽니다.</p>
+        </section>
+
+        <footer>
+            <p>이 사이트는 카에데가 팬심을 담아 제작했습니다. ❤️</p>
+        </footer>
+    </div>
+</body>
+</html>

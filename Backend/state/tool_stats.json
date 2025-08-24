@@ -1,0 +1,51 @@
+{
+  "backup_long_text_file": {
+    "calls": 8,
+    "success": 8,
+    "fail": 0,
+    "avg_latency_ms": 0.04483696764623346,
+    "last_used_ts": 1754689175.1135368
+  },
+  "write_file": {
+    "calls": 59,
+    "success": 59,
+    "fail": 0,
+    "avg_latency_ms": 639.6638105983368,
+    "last_used_ts": 1755736320.0626638
+  },
+  "execute_shell_command": {
+    "calls": 6,
+    "success": 6,
+    "fail": 0,
+    "avg_latency_ms": 22.25529801853554,
+    "last_used_ts": 1755309351.000981
+  },
+  "db_schema_query": {
+    "calls": 2,
+    "success": 2,
+    "fail": 0,
+    "avg_latency_ms": 6.231049948837608,
+    "last_used_ts": 1754693860.0522368
+  },
+  "backup_file": {
+    "calls": 161,
+    "success": 161,
+    "fail": 0,
+    "avg_latency_ms": 1.9924355682348671,
+    "last_used_ts": 1755734044.459816
+  },
+  "create_or_update_content_safely": {
+    "calls": 3,
+    "success": 3,
+    "fail": 0,
+    "avg_latency_ms": 0.0776812230469659,
+    "last_used_ts": 1755122276.602175
+  },
+  "manage_web_content": {
+    "calls": 8,
+    "success": 8,
+    "fail": 0,
+    "avg_latency_ms": 564.7079563066484,
+    "last_used_ts": 1755728111.5504613
+  }
+}

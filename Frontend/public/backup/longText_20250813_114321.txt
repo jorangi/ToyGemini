@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세기-의 대결: 북산 vs 세이린</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #16213e;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #0f3460;
+        }
+        h1 {
+            color: #e94560;
+            font-size: 3em;
+            text-shadow: 0 0 10px #e94560;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #c0c0c0;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .matchup {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .team {
+            background-color: #0f3460;
+            border-radius: 10px;
+            padding: 20px;
+            width: 45%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        .team h2 {
+            color: #53a8b6;
+            font-size: 2.2em;
+            border-bottom: 2px solid #53a8b6;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .vs {
+            font-size: 4em;
+            color: #e94560;
+            align-self: center;
+            font-weight: bold;
+            text-shadow: 0 0 15px #e94560;
+        }
+        .player-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .player-list li {
+            background-color: rgba(255, 255, 255, 0.05);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #53a8b6;
+            transition: background-color 0.3s;
+        }
+        .player-list li:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .player-name {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #f0f0f0;
+        }
+        .player-position {
+            font-size: 0.9em;
+            color: #b0b0b0;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>가상의 대결</h1>
+        <p class="subtitle">슬램덩크 '북산'과 쿠로코의 농구 '세이린'의 꿈의 매치!</p>
+        <div class="matchup">
+            <div class="team" id="shohoku">
+                <h2>북산 (SHOHOKU)</h2>
+                <ul class="player-list">
+                    <li><span class="player-name">강백호</span><span class="player-position">PF</span></li>
+                    <li><span class="player-name">서태웅</span><span class="player-position">SF</span></li>
+                    <li><span class="player-name">채치수</span><span class="player-position">C</span></li>
+                    <li><span class="player-name">송태섭</span><span class="player-position">PG</span></li>
+                    <li><span class="player-name">정대만</span><span class="player-position">SG</span></li>
+                </ul>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team" id="seirin">
+                <h2>세이린 (SEIRIN)</h2>
+                <ul class="player-list">
+                    <li><span class="player-name">쿠로코 테츠야</span><span class="player-position">? (PG/SF)</span></li>
+                    <li><span class="player-name">카가미 타이가</span><span class="player-position">PF</span></li>
+                    <li><span class="player-name">휴가 준페이</span><span class="player-position">SG</span></li>
+                    <li><span class="player-name">이즈키 슌</span><span class="player-position">PG</span></li>
+                    <li><span class="player-name">키요시 텟페이</span><span class="player-position">C</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북산 vs 산왕전 MVP 투표</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #e63946;
+        }
+        h1 {
+            border-bottom: 2px solid #e63946;
+            padding-bottom: 10px;
+        }
+        .candidate {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 5px solid #1d3557;
+            background-color: #f8f9fa;
+        }
+        .candidate h3 {
+            margin-top: 0;
+            color: #457b9d;
+        }
+        ul {
+            list-style-type: '🏀 ';
+            padding-left: 20px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏀 북산 vs 산왕전, 당신의 MVP는? 🏀</h1>
+        <p>전국 고교 농구대회 2회전, 절대왕자 산왕공고와의 전설적인 명승부! 모두가 MVP였지만, 당신의 마음을 가장 뜨겁게 만든 선수는 누구인가요?</p>
+
+        <div class="candidate">
+            <h3>강백호 (PF)</h3>
+            <ul>
+                <li>초보자의 한계를 뛰어넘는 놀라운 성장과 투지</li>
+                <li>승부를 결정지은 마지막 버저비터의 주인공</li>
+                <li>등 부상에도 포기하지 않는 열정으로 팀에 활력을 불어넣음</li>
+            </ul>
+        </div>
+
+        <div class="candidate">
+            <h3>서태웅 (SF)</h3>
+            <ul>
+                <li>팀을 위해 개인 플레이를 버리고 '패스'에 눈을 뜬 에이스</li>
+                <li>전국 최고의 선수 정우성을 상대로 대등한 승부를 펼침</li>
+                <li>강백호와의 마지막 하이파이브, 그리고 승리의 어시스트</li>
+            </ul>
+        </div>
+
+        <div class="candidate">
+            <h3>정대만 (SG)</h3>
+            <ul>
+                <li>체력적 한계 속에서도 터뜨린 기적과도 같은 3점슛 세례</li>
+                <li>"그래, 난 정대만. 포기를 모르는 남자지."</li>
+                <li>산왕의 추격 의지를 꺾는 결정적인 득점원 역할</li>
+            </ul>
+        </div>
+
+        <div class="candidate">
+            <h3>채치수 (C)</h3>
+            <ul>
+                <li>전국 최고의 센터 신현철을 상대로 보여준 든든한 골밑 장악력</li>
+                <li>"나는 팀의 주역이 아니라도 좋다." 팀을 위한 궂은일 담당</li>
+                <li>북산의 정신적 지주로서 팀을 끝까지 이끈 리더십</li>
+            </ul>
+        </div>
+
+        <div class="candidate">
+            <h3>송태섭 (PG)</h3>
+            <ul>
+                <li>산왕의 올코트 프레스를 뚫어낸 영리하고 빠른 돌파</li>
+                <li>"도내 No.1 가드는 바로 나, 송태섭이다!"</li>
+                <li>안정적인 경기 운영으로 공격의 시발점 역할 수행</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>이제 당신의 마음속 MVP를 정할 시간입니다!</p>
+        </div>
+    </div>
+</body>
+</html>

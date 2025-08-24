@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산왕공고 농구부</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        header {
+            background-color: #8B0000; /* 산왕의 강렬한 붉은색 */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        nav {
+            background-color: #550000;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #FFD700; /* 황금색 하이라이트 */
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            font-size: 2em;
+            color: #8B0000;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .player-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .player-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .player-card:hover {
+            transform: translateY(-5px);
+        }
+        .player-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .player-info {
+            padding: 15px;
+        }
+        .player-info h3 {
+            margin-top: 0;
+            color: #8B0000;
+        }
+        .player-info p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            background-color: #333;
+            color: white;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>산왕공고 농구부</h1>
+        <p>최강의 팀, 산왕공고</p>
+    </header>
+    <nav>
+        <a href="#about">소개</a>
+        <a href="#players">선수단</a>
+        <a href="#history">역사</a>
+        <a href="#contact">문의</a>
+    </nav>
+
+    <div class="container" id="about">
+        <h2 class="section-title">산왕공고 농구부 소개</h2>
+        <p>산왕공업 고등학교 농구부는 전국 최강의 팀으로, 수년간 전국대회 우승을 차지하며 그 명성을 떨치고 있습니다. 철저한 훈련과 강력한 팀워크를 바탕으로 어떤 상대도 압도하는 플레이를 선보입니다. '불패의 신화'를 이어가는 산왕공고 농구부에 오신 것을 환영합니다.</p>
+    </div>
+
+    <div class="container" id="players">
+        <h2 class="section-title">주요 선수단</h2>
+        <div class="player-grid">
+            <div class="player-card">
+                <img src="https://via.placeholder.com/250x200?text=Eiji+Sawakita" alt="사와키타 에이지">
+                <div class="player-info">
+                    <h3>사와키타 에이지</h3>
+                    <p>포지션: 스몰 포워드</p>
+                    <p>등번호: 9</p>
+                    <p>설명: 산왕의 에이스이자 일본 최고의 고교 선수. 뛰어난 개인기와 득점력을 자랑합니다.</p>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="https://via.placeholder.com/250x200?text=Kaede+Rukawa" alt="루카와 카에데">
+                <div class="player-info">
+                    <h3>후카츠 카즈나리</h3>
+                    <p>포지션: 포인트 가드</p>
+                    <p>등번호: 4</p>
+                    <p>설명: 팀의 주장으로, 냉철한 판단력과 뛰어난 리더십으로 팀을 이끕니다.</p>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="https://via.placeholder.com/250x200?text=Masashi+Kawata" alt="카와타 마사시">
+                <div class="player-info">
+                    <h3>카와타 마사시</h3>
+                    <p>포지션: 센터</p>
+                    <p>등번호: 7</p>
+                    <p>설명: 강력한 피지컬과 다양한 기술을 겸비한 일본 최고의 센터입니다.</p>
+                </div>
+            </div>
+            <div class="player-card">
+                <img src="https://via.placeholder.com/250x200?text=Mikio+Kawata" alt="카와타 미키오">
+                <div class="player-info">
+                    <h3>카와타 미키오</h3>
+                    <p>포지션: 센터</p>
+                    <p>등번호: 15</p>
+                    <p>설명: 마사시의 동생으로, 거대한 체구와 파워풀한 플레이가 특징입니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="history">
+        <h2 class="section-title">산왕공고 농구부의 역사</h2>
+        <p>산왕공고 농구부는 창단 이래 수많은 우승컵을 들어 올리며 일본 고교 농구의 역사를 새로 썼습니다. 특히 최근 몇 년간은 전국대회에서 압도적인 실력으로 무패 행진을 이어가고 있습니다. 이는 선수들의 끊임없는 노력과 코칭 스태프의 헌신적인 지도가 만들어낸 결과입니다.</p>
+    </div>
+
+    <div class="container" id="contact">
+        <h2 class="section-title">문의</h2>
+        <p>산왕공고 농구부에 대한 문의사항은 아래 이메일로 연락 주시기 바랍니다.</p>
+        <p>Email: sannoh_basketball@example.com</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 산왕공고 농구부. All rights reserved.</p>
+    </footer>
+</body>
+</html>

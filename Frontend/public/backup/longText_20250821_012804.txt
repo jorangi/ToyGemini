@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 - 혁신을 만나다</title>
+    <style>
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #007aff;
+        }
+        header p {
+            font-size: 1.2em;
+            color: #666;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #1d1d1f;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        .feature-item {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+        }
+        .feature-item h3 {
+            font-size: 1.8em;
+            color: #007aff;
+            margin-top: 0;
+        }
+        .feature-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .cta-button {
+            display: block;
+            width: 250px;
+            margin: 40px auto;
+            padding: 15px 20px;
+            background-color: #007aff;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.3em;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #005bb5;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #888;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>iPhone 15</h1>
+        <p>상상 그 이상의 혁신, 당신의 손안에</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>새로운 디자인과 강력한 성능</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>다이내믹 아일랜드</h3>
+                    <p>알림, 활동, 실시간 정보를 한눈에 확인하세요. 더욱 직관적이고 유연한 경험을 제공합니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>A17 Bionic 칩</h3>
+                    <p>모바일 프로세서의 한계를 뛰어넘는 압도적인 성능. 게임, 멀티태스킹, 모든 것이 매끄럽습니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>티타늄 디자인</h3>
+                    <p>항공우주 등급의 티타늄으로 더욱 가볍고 견고해졌습니다. 손에 쥐는 순간 느껴지는 프리미엄 감각.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>혁신적인 카메라 시스템</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>48MP 메인 카메라</h3>
+                    <p>놀라운 디테일과 색감으로 모든 순간을 포착합니다. 저조도 환경에서도 빛나는 결과물.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>5배 망원 카메라</h3>
+                    <p>멀리 있는 피사체도 선명하게 담아냅니다. 새로운 차원의 광학 줌으로 시야를 넓히세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>시네마틱 모드</h3>
+                    <p>자동으로 피사체에 초점을 맞추고 심도를 조절하여 영화 같은 영상을 촬영할 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>더욱 길어진 배터리</h2>
+            <p style="text-align: center; font-size: 1.1em; color: #333;">
+                하루 종일 당신과 함께하는 강력한 배터리 성능. 이제 충전 걱정 없이 마음껏 즐기세요.
+            </p>
+        </section>
+
+        <a href="#" class="cta-button">지금 바로 구매하기</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 iPhone 15. All rights reserved.</p>
+    </footer>
+</body>
+</html>

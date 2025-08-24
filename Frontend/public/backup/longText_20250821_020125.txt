@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 공식 웹사이트</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { color: #007bff; text-align: center; }
+        h2 { color: #0056b3; }
+        p { margin-bottom: 10px; }
+        .button { display: block; width: 200px; margin: 20px auto; padding: 10px 15px; background-color: #28a745; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
+        .button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>갤럭시 S24 공식 웹사이트</h1>
+        <p>새로운 갤럭시 S24 시리즈를 만나보세요. 혁신적인 AI 기능과 강력한 성능으로 당신의 일상을 더욱 특별하게 만듭니다.</p>
+
+        <h2>주요 특징</h2>
+        <ul>
+            <li><strong>갤럭시 AI:</strong> 실시간 통역, 서클 투 서치, 포토 어시스트 등 혁신적인 AI 기능 탑재.</li>
+            <li><strong>강력한 프로세서:</strong> 최신 프로세서로 더욱 빠르고 부드러운 사용 경험 제공.</li>
+            <li><strong>향상된 카메라:</strong> 전문가 수준의 사진과 동영상 촬영을 위한 업그레이드된 카메라 시스템.</li>
+            <li><strong>선명한 디스플레이:</strong> 밝고 생생한 색감을 자랑하는 다이내믹 아몰레드 2X 디스플레이.</li>
+            <li><strong>오래가는 배터리:</strong> 하루 종일 걱정 없이 사용할 수 있는 강력한 배터리 성능.</li>
+        </ul>
+
+        <h2>모델 라인업</h2>
+        <ul>
+            <li><strong>갤럭시 S24:</strong> 컴팩트한 디자인과 강력한 성능의 완벽한 조화.</li>
+            <li><strong>갤럭시 S24+:</strong> 더 큰 화면과 향상된 배터리로 더욱 몰입감 있는 경험.</li>
+            <li><strong>갤럭시 S24 Ultra:</strong> S펜과 티타늄 프레임, 최상급 카메라를 갖춘 궁극의 프리미엄 모델.</li>
+        </ul>
+
+        <p>지금 바로 갤럭시 S24 시리즈를 경험하고, 당신의 가능성을 확장하세요!</p>
+        <a href="#" class="button">자세히 알아보기</a>
+    </div>
+</body>
+</html>

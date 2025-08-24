@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>갤럭시 S24</title>
+</head>
+<body>
+    <h1>갤럭시 S24 공식 사이트</h1>
+    <p>새로운 갤럭시 S24의 놀라운 기능들을 만나보세요.</p>
+</body>
+</html>

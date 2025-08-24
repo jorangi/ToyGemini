@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 공식 사이트</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #000; color: #fff; padding: 1em 0; text-align: center; }
+        .container { width: 80%; margin: auto; overflow: hidden; padding: 20px 0; }
+        h1, h2 { color: #007bff; }
+        .feature { background-color: #fff; margin-bottom: 20px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .feature img { max-width: 100%; height: auto; display: block; margin-bottom: 10px; }
+        footer { background-color: #333; color: #fff; text-align: center; padding: 1em 0; position: relative; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>삼성 갤럭시 S24</h1>
+        <p>새로운 AI 경험의 시작</p>
+    </header>
+    <div class="container">
+        <div class="feature">
+            <h2>혁신적인 AI 기능</h2>
+            <p>갤럭시 S24는 온디바이스 AI를 통해 새로운 소통 방식과 생산성을 제공합니다. 실시간 통역, 서클 투 서치, 노트 어시스트 등 놀라운 AI 기능을 경험해보세요.</p>
+            <img src="https://example.com/s24_ai.jpg" alt="갤럭시 S24 AI 기능">
+        </div>
+        <div class="feature">
+            <h2>강력한 성능</h2>
+            <p>최신 프로세서와 최적화된 소프트웨어로 어떤 작업도 매끄럽게 처리합니다. 게임, 멀티태스킹, 고해상도 영상 편집까지 모두 가능합니다.</p>
+            <img src="https://example.com/s24_performance.jpg" alt="갤럭시 S24 성능">
+        </div>
+        <div class="feature">
+            <h2>놀라운 카메라</h2>
+            <p>향상된 카메라 시스템으로 어떤 환경에서도 선명하고 생생한 사진과 동영상을 촬영할 수 있습니다. 나이토그래피 줌으로 어두운 곳에서도 밝게 담아보세요.</p>
+            <img src="https://example.com/s24_camera.jpg" alt="갤럭시 S24 카메라">
+        </div>
+        <div class="feature">
+            <h2>세련된 디자인</h2>
+            <p>견고하면서도 아름다운 디자인으로 당신의 스타일을 완성합니다. 다양한 색상으로 개성을 표현해보세요.</p>
+            <img src="https://example.com/s24_design.jpg" alt="갤럭시 S24 디자인">
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 삼성전자. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

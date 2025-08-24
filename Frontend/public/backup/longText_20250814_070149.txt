@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시라토리자와 vs 아오바죠사이</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            background: #2c2c2c;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            overflow: hidden;
+            border: 2px solid #00ffff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ffff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 900;
+            color: #ffffff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+        .match-up {
+            display: flex;
+            justify-content: space-around;
+            padding: 40px 20px;
+            align-items: flex-start;
+        }
+        .team {
+            width: 45%;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team:hover {
+            transform: translateY(-10px);
+        }
+        .team.shiratorizawa {
+            background: linear-gradient(145deg, #4a148c, #880e4f);
+            box-shadow: 0 0 20px rgba(234, 128, 252, 0.7);
+        }
+        .team.aobajohsai {
+            background: linear-gradient(145deg, #00bcd4, #0097a7);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+        }
+        .team h2 {
+            font-size: 2.5em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .team .slogan {
+            font-style: italic;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .player-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .player-list li {
+            background: rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            border-left: 5px solid;
+        }
+        .team.shiratorizawa .player-list li {
+            border-color: #d500f9;
+        }
+        .team.aobajohsai .player-list li {
+            border-color: #18ffff;
+        }
+        .player-list strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            border-top: 2px solid #00ffff;
+            font-size: 0.9em;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>세기의 대결: 시라토리자와 vs 아오바죠사이</h1>
+        </header>
+        <main class="match-up">
+            <div class="team shiratorizawa">
+                <h2>시라토리자와 학원</h2>
+                <p class="slogan">"강력함, 그것이 전부다."</p>
+                <ul class="player-list">
+                    <li><strong>우시지마 와카토시:</strong> 절대적인 힘을 가진 국가대표 에이스.</li>
+                    <li><strong>텐도 사토리:</strong> 예측 불가능한 게스 블로킹의 귀재.</li>
+                    <li><strong>시라부 켄지로:</strong> 에이스에게 모든 것을 바치는 냉철한 세터.</li>
+                    <li><strong>고시키 츠토무:</strong> 차기 에이스를 꿈꾸는 열정적인 1학년.</li>
+                </ul>
+            </div>
+            <div class="team aobajohsai">
+                <h2>아오바죠사이 고교</h2>
+                <p class="slogan">"코트 위의 지배자."</p>
+                <ul class="player-list">
+                    <li><strong>오이카와 토오루:</strong> 팀의 능력을 100% 끌어내는 천재 세터이자 주장.</li>
+                    <li><strong>이와이즈미 하지메:</strong> 오이카와의 든든한 파트너이자 강력한 스파이커.</li>
+                    <li><strong>킨다이치 유타로:</strong> 높은 타점을 자랑하는 미들 블로커.</li>
+                    <li><strong>쿠니미 아키라:</strong> 효율을 중시하는 영리한 윙 스파이커.</li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <p>카에데가 제작한 하이큐 팬사이트입니다. 즐겁게 감상해주세요! 😊</p>
+        </footer>
+    </div>
+</body>
+</html>

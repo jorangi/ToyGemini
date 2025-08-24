@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북산의 숨은 주역들</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; text-align: center; padding: 50px; }
+        h1 { color: #8B0000; }
+        .player { background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px auto; max-width: 600px; }
+        .player h2 { color: #000; }
+        .player p { font-size: 1.1em; }
+    </style>
+</head>
+<body>
+    <h1>🏀 북산의 숨은 주역: 벤치 멤버들을 위하여 🏀</h1>
+    
+    <div class="player">
+        <h2>이호식 (야스다 야스하루)</h2>
+        <p>포인트 가드 (PG) | 등번호 6번<br>빠른 스피드와 안정적인 볼 핸들링이 장점. 강백호의 성장을 묵묵히 돕는 든든한 선배.</p>
+    </div>
+
+    <div class="player">
+        <h2>신오일 (시오자키 테츠시)</h2>
+        <p>가드 (SG) | 등번호 8번<br>북산의 주전 가드 라인을 뒷받침하는 식스맨. 끈기 있는 수비로 팀에 기여한다.</p>
+    </div>
+
+    <div class="player">
+        <h2>정병욱 (카쿠타 사토루)</h2>
+        <p>센터 (C) | 등번호 9번<br>채치수의 뒤를 잇는 북산의 골밑 요원. 성실한 훈련 태도로 팀의 귀감이 된다.</p>
+    </div>
+
+    <div class="player">
+        <h2>이달재 (사사오카 사토루)</h2>
+        <p>포워드 (F) | 등번호 13번<br>다양한 포지션을 소화할 수 있는 유틸리티 플레이어. 팀이 필요할 때 언제든 투입될 준비가 되어있다.</p>
+    </div>
+
+</body>
+</html>

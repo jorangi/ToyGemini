@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카라스노 vs 이나리자키</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #2c2c2c;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 700px;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ff9900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .scoreboard {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .team {
+            width: 45%;
+        }
+        .team h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .team.karasuno h2 { color: #f57c00; }
+        .team.inarizaki h2 { color: #cccccc; }
+        .score {
+            font-size: 4.5em;
+            font-weight: 700;
+            padding: 10px 0;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin: 0 5px;
+        }
+        .buttons button:hover {
+            background-color: #ff9900;
+            transform: scale(1.05);
+        }
+        .reset-button {
+            background-color: #d32f2f;
+            margin-top: 20px;
+        }
+        .reset-button:hover {
+            background-color: #f44336 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>카라스노 vs 이나리자키</h1>
+        <div class="scoreboard">
+            <div class="team karasuno">
+                <h2>카라스노</h2>
+                <div id="karasuno-score" class="score">0</div>
+                <div class="buttons">
+                    <button onclick="changeScore('karasuno', 1)">+1</button>
+                    <button onclick="changeScore('karasuno', -1)">-1</button>
+                </div>
+            </div>
+            <div class="team inarizaki">
+                <h2>이나리자키</h2>
+                <div id="inarizaki-score" class="score">0</div>
+                <div class="buttons">
+                    <button onclick="changeScore('inarizaki', 1)">+1</button>
+                    <button onclick="changeScore('inarizaki', -1)">-1</button>
+                </div>
+            </div>
+        </div>
+        <button class="reset-button" onclick="resetScores()">점수 초기화</button>
+    </div>
+
+    <script>
+        let karasunoScore = 0;
+        let inarizakiScore = 0;
+
+        function changeScore(team, value) {
+            if (team === 'karasuno') {
+                karasunoScore += value;
+                if (karasunoScore < 0) karasunoScore = 0;
+                document.getElementById('karasuno-score').innerText = karasunoScore;
+            } else if (team === 'inarizaki') {
+                inarizakiScore += value;
+                if (inarizakiScore < 0) inarizakiScore = 0;
+                document.getElementById('inarizaki-score').innerText = inarizakiScore;
+            }
+        }
+
+        function resetScores() {
+            karasunoScore = 0;
+            inarizakiScore = 0;
+            document.getElementById('karasuno-score').innerText = 0;
+            document.getElementById('inarizaki-score').innerText = 0;
+        }
+    </script>
+</body>
+</html>

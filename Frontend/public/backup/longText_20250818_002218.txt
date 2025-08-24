@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 공식 사이트</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #000; color: #fff; padding: 20px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .container { width: 80%; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .hero { text-align: center; padding: 50px 0; background-color: #e2e2e2; margin-bottom: 20px; }
+        .hero h2 { font-size: 2em; color: #000; }
+        .hero p { font-size: 1.2em; color: #555; }
+        .features { display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 30px; }
+        .feature-item { flex-basis: 30%; text-align: center; padding: 20px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .feature-item h3 { color: #007bff; }
+        footer { text-align: center; padding: 20px; background-color: #333; color: #fff; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>갤럭시 S24</h1>
+        <p>AI가 선사하는 새로운 모바일 경험</p>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h2>혁신적인 AI 기능으로 무장한 갤럭시 S24를 만나보세요!</h2>
+            <p>당신의 일상을 더욱 스마트하고 편리하게 만들어 줄 최첨단 기술.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <h3>실시간 통역</h3>
+                <p>언어의 장벽을 허무는 실시간 통역 기능으로 전 세계와 소통하세요.</p>
+            </div>
+            <div class="feature-item">
+                <h3>서클 투 서치</h3>
+                <p>궁금한 것을 화면에 동그라미만 그리면 바로 검색 결과가 나타납니다.</p>
+            </div>
+            <div class="feature-item">
+                <h3>나이토그래피 줌</h3>
+                <p>어두운 곳에서도 선명하고 생생한 사진을 촬영할 수 있습니다.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <h3>강력한 성능</h3>
+                <p>최신 프로세서와 최적화된 소프트웨어로 압도적인 성능을 경험하세요.</p>
+            </div>
+            <div class="feature-item">
+                <h3>오래가는 배터리</h3>
+                <p>하루 종일 걱정 없이 사용할 수 있는 강력한 배터리 성능.</p>
+            </div>
+            <div class="feature-item">
+                <h3>아름다운 디자인</h3>
+                <p>손에 착 감기는 완벽한 그립감과 세련된 디자인.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Samsung Electronics. All rights reserved.</p>
+    </footer>
+</body>
+</html>

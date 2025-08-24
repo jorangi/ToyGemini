@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 | 혁신적인 AI 폰</title>
+    <style>
+        body {
+            font-family: 'SamsungOne', 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .feature-item {
+            background-color: #e9f5ff;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .feature-item h3 {
+            color: #0056b3;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        .feature-item p {
+            font-size: 0.95em;
+            color: #666;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 0.9em;
+            background-color: #e0e0e0;
+            margin-top: 40px;
+        }
+        .image-placeholder {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            margin: 20px auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        갤럭시 S24
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>혁신적인 AI 폰의 시작</h2>
+            <p>갤럭시 S24 시리즈는 모바일 AI의 새로운 시대를 엽니다. 당신의 일상과 창의력을 한 단계 더 끌어올릴 놀라운 AI 기능들을 경험해보세요.</p>
+            <img src="https://via.placeholder.com/600x350?text=Galaxy+S24+AI" alt="갤럭시 S24 AI" class="image-placeholder">
+            <a href="#" class="cta-button">지금 바로 경험하기</a>
+        </div>
+
+        <div class="section">
+            <h2>주요 AI 기능</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>서클 투 서치 (Circle to Search)</h3>
+                    <p>화면의 어떤 이미지든 동그라미를 그리면 바로 검색 결과가 나타납니다. 궁금한 것을 즉시 찾아보세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>실시간 통역 (Live Translate)</h3>
+                    <p>전화 통화 중에도 실시간으로 음성 통역을 제공합니다. 언어의 장벽 없이 소통하세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>포토 어시스트 (Photo Assist)</h3>
+                    <p>AI가 사진을 분석하여 최적의 편집을 제안합니다. 그림자 제거, 리마스터링 등 전문가처럼 사진을 보정해보세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>노트 어시스트 (Note Assist)</h3>
+                    <p>복잡한 회의록도 AI가 요약하고 정리해줍니다. 중요한 내용을 놓치지 않고 효율적으로 관리하세요.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>강력한 성능과 디자인</h2>
+            <p>최신 프로세서와 아름다운 디자인으로 무장한 갤럭시 S24는 당신의 모든 활동을 더욱 빠르고 스타일리시하게 만들어줍니다.</p>
+            <img src="https://via.placeholder.com/600x350?text=Galaxy+S24+Design" alt="갤럭시 S24 디자인" class="image-placeholder">
+            <a href="#" class="cta-button">자세히 알아보기</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Samsung Electronics. All rights reserved.
+    </div>
+</body>
+</html>

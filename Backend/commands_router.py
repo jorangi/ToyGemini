@@ -73,12 +73,8 @@ def sanitize_echo(cmd: str) -> str:
         return m.group(1) + content + m.group(3)
     return cmd
 
-# commands_router.py 파일의 execute_shell 함수를 아래 코드로 교체하세요.
-import re # 파일 상단에 re 모듈을 import 해주세요.
-
 @router.post("/execute-shell")
 def execute_shell(req: CommandRequest):
-    # 1. 평소에는 실행을 금지할 명령어 목록은 그대로 둡니다.
     blocked = [
         'del', 'rm', 'format', 'shutdown', 'regedit', 'erase', 'rmdir',
         'wsl', 'start', 'curl', 'ftp', 'runas', 'schtasks',
@@ -88,27 +84,31 @@ def execute_shell(req: CommandRequest):
     command_to_run = req.command.strip()
     is_forced = False
 
-    # 2. 'forcecommand(...)' 패턴이 있는지 확인합니다.
     force_match = re.match(r'^\s*forcecommand\((.*)\)\s*$', command_to_run, re.DOTALL)
     
     if force_match:
-        # 패턴이 일치하면, 안쪽의 실제 명령어만 추출하고 강제 실행 플래그를 True로 설정합니다.
         command_to_run = force_match.group(1).strip()
         is_forced = True
         print(f"🛡️ 강제 실행 모드 감지. 실행할 명령어: {command_to_run}")
     
-    # 3. 강제 실행 모드가 아닐 경우에만 금지된 명령어를 확인합니다.
     if not is_forced:
         lowered_cmd = command_to_run.lower()
-        for bad in blocked:
-            if re.search(rf'\b{re.escape(bad)}\b', lowered_cmd):
-                # 금지된 명령어일 경우, 400 오류와 함께 강제 실행 방법을 안내합니다.
-                raise HTTPException(
-                    status_code=400,
-                    detail=f"금지된 명령어입니다: '{bad}'. 강제 실행을 원하시면 'forcecommand({command_to_run})' 형식으로 요청하세요."
-                )
+        
+        is_powershell_command = lowered_cmd.startswith('powershell')
 
-    # 4. 최종적으로 실행할 명령어를 처리합니다. (이전과 동일)
+        if not lowered_cmd.startswith('mkdir'):
+            for bad in blocked:
+                if is_powershell_command and bad == 'format':
+                    continue
+
+                if re.search(rf'\b{re.escape(bad)}\b', lowered_cmd):
+                    return {
+                        "stdout": "",
+                        "stderr": f"금지된 명령어입니다: '{bad}'. 강제 실행을 원하시면 'forcecommand({command_to_run})' 형식으로 요청하세요.",
+                        "exit_code": 1, # 실패를 나타내는 0이 아닌 값
+                        "status": "failed" # 추가적인 상태 정보 (선택 사항)
+                    }
+
     try:
         raw_commands = command_to_run.split('\n')
         commands = []
@@ -118,28 +118,46 @@ def execute_shell(req: CommandRequest):
                 if cmd:
                     commands.append(sanitize_echo(cmd))
 
-        full_command = " & ".join(commands)
+        full_command = (
+            f'chcp 65001 > nul && cd /d "{ROOT_DIR}" && {command_to_run}'
+        )
         
         print("실행:", full_command)
         result = subprocess.run(
-            f'chcp 65001 > nul && {full_command}',
+            full_command,  # 직접 full_command를 전달
             capture_output=True,
             text=True,
             shell=True,
             timeout=30,
-            cwd=ROOT_DIR,
+            # cwd 인자는 cd 명령어로 대체되었으므로 제거해도 무방합니다.
             encoding='utf-8',
             errors='replace'
         )
         
         stdout = result.stdout.strip()
+        stderr = result.stderr.strip()
+        exit_code = result.returncode
+
+        if (command_to_run.lower().strip().startswith('mkdir') and
+                'already exists' in stderr):
+            print("✅ mkdir 오류 무시: 폴더가 이미 존재하므로 성공으로 처리합니다.")
+            stderr = ""
+            exit_code = 0
+        
+        if (command_to_run.lower().strip().startswith('dir') and
+                'File Not Found' in stderr):
+            print("✅ dir 오류 무시: 파일이 없는 것은 정상적인 결과입니다.")
+            stdout = f"{stdout}\n{stderr}"
+            stderr = ""
+            exit_code = 0
+
         if "Active code page: 65001" in stdout:
             stdout = stdout.replace("Active code page: 65001", "").strip()
             
         return {
             "stdout": stdout,
-            "stderr": result.stderr.strip(),
-            "exit_code": result.returncode
+            "stderr": stderr,
+            "exit_code": exit_code
         }
     except subprocess.TimeoutExpired:
         raise HTTPException(status_code=408, detail="명령 실행 시간 초과")

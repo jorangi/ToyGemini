@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산왕 VS 북산</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #1a237e;
+        }
+        h1 {
+            border-bottom: 3px solid #ff4081;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        .team-info {
+            background-color: #e8eaf6;
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%;
+        }
+        .team-info h3 {
+            color: #c51162;
+            text-align: center;
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .conclusion {
+            margin-top: 30px;
+            text-align: center;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>산왕공고 VS 북산고교: 전설의 명승부</h1>
+        <p>슬램덩크 최고의 명장면으로 꼽히는 산왕공고와 북산고교의 인터하이 2회전 경기를 정리한 페이지입니다. 포기하지 않는 북산의 투지와 절대왕자 산왕의 위엄이 충돌한, 손에 땀을 쥐게 하는 대결이었죠!</p>
+        
+        <div class="team">
+            <div class="team-info">
+                <h3>산왕공고 (Sannoh) - 최강의 도전자</h3>
+                <ul>
+                    <li>이명헌 (PG) - 주장, 냉철한 코트 위의 사령관</li>
+                    <li>정우성 (SF) - 전국 최고의 고교 선수</li>
+                    <li>신현철 (C) - 강함과 유연함을 겸비한 센터</li>
+                    <li>최동오 (SG) - 뛰어난 3점 슈터</li>
+                    <li>정성구 (PF) - 끈질긴 수비의 스페셜리스트</li>
+                </ul>
+            </div>
+            <div class="team-info">
+                <h3>북산고교 (Shohoku) - 기적의 팀</h3>
+                <ul>
+                    <li>채치수 (C) - 주장, 북산의 정신적 지주</li>
+                    <li>강백호 (PF) - 놀라운 성장력의 리바운드 왕</li>
+                    <li>서태웅 (SF) - 북산의 슈퍼 에이스</li>
+                    <li>정대만 (SG) - 포기를 모르는 불꽃 남자</li>
+                    <li>송태섭 (PG) - 작지만 빠른 돌격대장</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <p>"왼손은 거들 뿐..." 수많은 명대사와 명장면을 남긴 이 경기는 영원히 팬들의 가슴속에 기억될 것입니다.</p>
+        </div>
+    </div>
+</body>
+</html>

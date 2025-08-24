@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 - 새로운 시대의 시작</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            padding: 1.5em 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: #007bff;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-left: 5px solid #007bff;
+            padding-left: 10px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .feature-item {
+            background-color: #f9f9f9;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+        .feature-item h3 {
+            color: #0056b3;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .feature-item p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2em;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            text-align: center;
+            padding: 2em 0;
+            background-color: #333;
+            color: #fff;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>갤럭시 S24</h1>
+        <p>새로운 시대의 시작, AI가 선사하는 놀라운 경험</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>혁신적인 AI 기능</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>실시간 통역</h3>
+                    <p>언어의 장벽을 허무는 실시간 통역으로 전 세계와 소통하세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>서클 투 서치</h3>
+                    <p>궁금한 것을 동그라미만 그리면 바로 검색 결과가 나타납니다.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>포토 어시스트</h3>
+                    <p>AI가 사진을 분석하여 최적의 편집을 제안하고 실행합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>강력한 성능과 디자인</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>최강의 프로세서</h3>
+                    <p>어떤 작업도 거침없이 처리하는 압도적인 성능을 경험하세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>다이내믹 아몰레드 2X</h3>
+                    <p>생생하고 선명한 화질로 콘텐츠를 즐기세요.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>프리미엄 디자인</h3>
+                    <p>견고하면서도 아름다운 디자인으로 당신의 스타일을 완성합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="text-align: center;">
+            <h2>지금 바로 경험하세요!</h2>
+            <a href="#" class="cta-button">갤럭시 S24 자세히 보기</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 갤럭시 S24. 모든 권리 보유.</p>
+    </footer>
+</body>
+</html>

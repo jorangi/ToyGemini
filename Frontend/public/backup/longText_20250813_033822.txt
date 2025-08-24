@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>최강산왕 | SLAM DUNK</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border: 2px solid #4a0000;
+            border-radius: 10px;
+        }
+        h1 {
+            font-weight: 900;
+            color: #e6e6e6;
+            border-bottom: 3px solid #8b0000;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .team-motto {
+            font-style: italic;
+            color: #ccc;
+            margin: 20px 0;
+        }
+        .main-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 3px solid #333;
+        }
+        h2 {
+            font-weight: 700;
+            color: #d4af37;
+            border-left: 5px solid #d4af37;
+            padding-left: 10px;
+            text-align: left;
+            margin-top: 40px;
+        }
+        p, ul {
+            text-align: left;
+            line-height: 1.8;
+            color: #ddd;
+        }
+        .player-list {
+            list-style: none;
+            padding: 0;
+        }
+        .player-list li {
+            background-color: #2a2a2a;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #8b0000;
+            transition: transform 0.2s;
+        }
+        .player-list li:hover {
+            transform: scale(1.03);
+            background-color: #333;
+        }
+        .player-name {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .player-details {
+            font-size: 0.9em;
+            color: #bbb;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.8em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>최강산왕 (SANNOH)</h1>
+        <p class="team-motto">"우리는 도전자이지, 왕자가 아니다."</p>
+        <img src="https://i.namu.wiki/i/43p4G-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_p8pLp-p_...</html>

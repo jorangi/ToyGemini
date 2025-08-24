@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>산왕공고 vs 토오 학원 가상 대결</title>
+<style>
+  body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; text-align: center; }
+  .container { max-width: 900px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+  h1 { color: #1a237e; border-bottom: 3px solid #1a237e; padding-bottom: 10px; margin-bottom: 20px; }
+  .matchup { display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap; }
+  .team { width: 45%; background-color: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #ddd;}
+  .team h2 { font-size: 1.8em; margin-bottom: 15px; }
+  .sannoh h2 { color: #283593; } /* 인디고 */
+  .too h2 { color: #c62828; } /* 레드 */
+  .player-list { list-style: none; padding: 0; text-align: left; }
+  .player-list li { background: #fff; margin-bottom: 10px; padding: 12px; border-radius: 5px; border-left: 5px solid; transition: transform 0.2s; }
+  .player-list li:hover { transform: scale(1.03); }
+  .sannoh .player-list li { border-color: #5c6bc0; }
+  .too .player-list li { border-color: #ef5350; }
+  .player-name { font-weight: bold; font-size: 1.1em; }
+  .player-role { font-size: 0.9em; color: #666; display: block; margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>최강의 격돌: 슬램덩크 산왕공고 vs 쿠로코의 농구 토오 학원</h1>
+
+  <div class="matchup">
+    <div class="team sannoh">
+      <h2>산왕공고 (Sannoh)</h2>
+      <ul class="player-list">
+        <li>
+          <span class="player-name">이명헌 (PG)</span>
+          <span class="player-role">코트를 지배하는 냉철한 사령관. '뿅'</span>
+        </li>
+        <li>
+          <span class="player-name">정우성 (SF)</span>
+          <span class="player-role">의심의 여지 없는 고교 No.1 플레이어</span>
+        </li>
+        <li>
+          <span class="player-name">신현철 (C)</span>
+          <span class="player-role">강력한 파워와 기술을 겸비한 대학 레벨 센터</span>
+        </li>
+        <li>
+          <span class="player-name">최동오 (SG)</span>
+          <span class="player-role">안정적인 득점력을 갖춘 전국구 슈팅가드</span>
+        </li>
+        <li>
+          <span class="player-name">김낙수 (PG/SG)</span>
+          <span class="player-role">끈질긴 수비와 허를 찌르는 플레이의 스페셜리스트</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="team too">
+      <h2>토오 학원 (Tōō Academy)</h2>
+      <ul class="player-list">
+        <li>
+          <span class="player-name">아오미네 다이키 (PF)</span>
+          <span class="player-role">'기적의 세대'의 에이스, 예측 불가능한 스트릿볼의 제왕</span>
+        </li>
+        <li>
+          <span class="player-name">이마요시 쇼이치 (PG)</span>
+          <span class="player-role">상대의 심리를 꿰뚫는 능구렁이 같은 주장</span>
+        </li>
+        <li>
+          <span class="player-name">사쿠라이 료 (SG)</span>
+          <span class="player-role">매우 빠른 릴리즈를 가진 사과 잘하는 슈터</span>
+        </li>
+        <li>
+          <span class="player-name">와카마츠 코스케 (C)</span>
+          <span class="player-role">뛰어난 피지컬과 리바운드 능력을 갖춘 파워 센터</span>
+        </li>
+        <li>
+          <span class="player-name">모모이 사츠키 (Manager)</span>
+          <span class="player-role">상대 선수의 성장까지 예측하는 압도적인 정보 분석 능력</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

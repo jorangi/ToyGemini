@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>북산 vs 능남</title>
+<style>
+  body { font-family: 'Pretendard', sans-serif; background-color: #1a1a1a; color: #f0f0f0; margin: 0; padding: 20px; text-align: center; }
+  .header { padding: 20px 0; border-bottom: 3px solid #ff4500; }
+  .header h1 { font-size: 3em; color: #ffffff; text-shadow: 2px 2px 4px #000000; margin: 0; }
+  .header h2 { font-size: 1.5em; color: #cccccc; margin: 10px 0; }
+  .match-container { display: flex; justify-content: space-around; align-items: flex-start; margin-top: 40px; }
+  .team { width: 45%; padding: 20px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+  .team-shohoku { background-color: #c00000; border: 2px solid #ff4500; }
+  .team-ryonan { background-color: #003366; border: 2px solid #00aaff; }
+  .team h3 { font-size: 2em; margin-top: 0; border-bottom: 2px solid; padding-bottom: 10px; }
+  .player-list { list-style: none; padding: 0; text-align: left; }
+  .player-list li { background-color: rgba(255,255,255,0.1); margin: 10px 0; padding: 15px; border-radius: 5px; font-size: 1.2em; transition: transform 0.2s; }
+  .player-list li:hover { transform: scale(1.05); }
+  .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #444; font-size: 0.9em; color: #888; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>세기의 대결</h1>
+  <h2>북산고교 vs 능남고교</h2>
+</div>
+
+<div class="match-container">
+  <div class="team team-shohoku">
+    <h3>북산 (SHOHOKU)</h3>
+    <ul class="player-list">
+      <li>#4. 채치수 (C)</li>
+      <li>#7. 송태섭 (PG)</li>
+      <li>#10. 강백호 (PF)</li>
+      <li>#11. 서태웅 (SF)</li>
+      <li>#14. 정대만 (SG)</li>
+    </ul>
+  </div>
+
+  <div class="team team-ryonan">
+    <h3>능남 (RYONAN)</h3>
+    <ul class="player-list">
+      <li>#4. 변덕규 (C)</li>
+      <li>#7. 윤대협 (SF/PG)</li>
+      <li>#8. 허태환 (PG)</li>
+      <li>#13. 황태산 (PF)</li>
+      <li>#?. 유명호 감독</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <p>카에데가 제작한 페이지입니다. 미리보기 패널에서 확인하세요!</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이큐!! 라이벌 매치: 시라토리자와 vs 이타치야마</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #8A2BE2, #4a00e0);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .match-up {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px 20px;
+            align-items: stretch;
+        }
+        .team {
+            width: 48%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .team:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .team.shiratorizawa {
+            background-color: #F0E6FF;
+            border: 2px solid #8A2BE2;
+        }
+        .team.itachiyama {
+            background-color: #E6F7FF;
+            border: 2px solid #00BFFF;
+        }
+        .team h2 {
+            font-size: 2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .team.shiratorizawa h2 { color: #5a1e9e; }
+        .team.itachiyama h2 { color: #007a9e; }
+        .team-logo {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .player-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .player-list li {
+            background-color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            border-left: 5px solid;
+        }
+        .team.shiratorizawa .player-list li { border-color: #8A2BE2; }
+        .team.itachiyama .player-list li { border-color: #00BFFF; }
+        .player-list strong {
+            font-weight: 700;
+        }
+        .analysis {
+            padding: 30px;
+            background-color: #fafafa;
+            border-top: 1px solid #eee;
+        }
+        .analysis h3 {
+            text-align: center;
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .analysis-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .analysis-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 48%;
+            border: 1px solid #ddd;
+        }
+        .analysis-item h4 {
+            margin-top: 0;
+            color: #4a00e0;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+            background-color: #f8f9fa;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>라이벌 결정전: 최강의 창 vs 최강의 방패</h1>
+        </header>
+
+        <main>
+            <div class="match-up">
+                <div class="team shiratorizawa">
+                    <h2>시라토리자와 학원</h2>
+                    <img src="https://i.imgur.com/OqF4gUe.png" alt="시라토리자와 로고" class="team-logo">
+                    <ul class="player-list">
+                        <li><strong>우시지마 와카토시:</strong> 전국 3대 스파이커, 압도적인 파워</li>
+                        <li><strong>텐도 사토리:</strong> 예측 불가능의 게스 블로커</li>
+                        <li><strong>시라부 켄지로:</strong> 안정적인 세터, 우시지마를 향한 강한 신뢰</li>
+                        <li><strong>고시키 츠토무:</strong> 차기 에이스를 노리는 1학년 스파이커</li>
+                    </ul>
+                </div>
+
+                <div class="team itachiyama">
+                    <h2>이타치야마 학원</h2>
+                    <img src="https://i.imgur.com/JtLdbeA.png" alt="이타치야마 로고" class="team-logo">
+                     <ul class="player-list">
+                        <li><strong>사쿠사 키요오미:</strong> 전국 3대 스파이커, 유연한 손목을 이용한 스파이크</li>
+                        <li><strong>코모리 모토야:</strong> 전국 No.1 고교 리베로</li>
+                        <li><strong>이이즈나 츠카사:</strong> 뛰어난 실력의 주장이자 세터</li>
+                        <li><strong>(기타 선수):</strong> 전국 레벨의 탄탄한 수비력</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="analysis">
+                <h3>전력 분석</h3>
+                <div class="analysis-content">
+                    <div class="analysis-item">
+                        <h4>시라토리자와: 절대왕자의 파워</h4>
+                        <p>우시지마라는 절대적인 에이스를 중심으로 한 공격력은 전국 최고 수준. 모든 공격이 우시지마로 통하며, 그 위력은 상대 블로커들을 압도합니다.</p>
+                    </div>
+                    <div class="analysis-item">
+                        <h4>이타치야마: 철벽의 수비</h4>
+                        <p>코모리라는 최고의 리베로와 사쿠사의 까다로운 스파이크가 조화를 이룹니다. 팀 전체의 수비 조직력이 매우 뛰어나 '최강의 방패'로 불립니다.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 하이큐!! 팬사이트. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

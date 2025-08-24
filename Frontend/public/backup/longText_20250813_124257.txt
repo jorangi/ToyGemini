@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>카라스노 vs 후쿠로다니</title>
+<style>
+  body { font-family: 'Arial', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; text-align: center; }
+  .container { max-width: 800px; margin: auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; }
+  header h1 { background-color: #222; color: white; padding: 20px 0; margin: 0; font-size: 2.5em; }
+  .vs { font-size: 2em; color: #ff4500; margin: 20px 0; font-weight: bold; }
+  .teams-container { display: flex; justify-content: space-around; padding: 20px; }
+  .team { width: 45%; padding: 15px; border-radius: 8px; }
+  .karasuno { background-color: #fff; border: 2px solid #ff6600; }
+  .fukurodani { background-color: #fff; border: 2px solid #ffd700; }
+  .team h2 { font-size: 1.8em; margin-top: 0; }
+  .karasuno h2 { color: #ff6600; }
+  .fukurodani h2 { color: #333; border-bottom: 2px solid #ffd700; padding-bottom: 5px; }
+  .team ul { list-style: none; padding: 0; text-align: left; }
+  .team li { background-color: #f9f9f9; margin: 5px 0; padding: 10px; border-radius: 5px; }
+  footer { padding: 15px; background-color: #222; color: #aaa; font-size: 0.9em; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>세기의 대결</h1>
+    </header>
+    <div class="teams-container">
+      <div class="team karasuno">
+        <h2>카라스노 고교</h2>
+        <ul>
+          <li>히나타 쇼요 (MB)</li>
+          <li>카게야마 토비오 (S)</li>
+          <li>사와무라 다이치 (WS)</li>
+          <li>니시노야 유 (L)</li>
+        </ul>
+      </div>
+      <div class="team fukurodani">
+        <h2>후쿠로다니 학원</h2>
+        <ul>
+          <li>보쿠토 코타로 (WS)</li>
+          <li>아카아시 케이지 (S)</li>
+          <li>코노하 아키노리 (WS)</li>
+          <li>코미 하루키 (L)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="vs">VS</div>
+    <footer>
+      <p>과연 승자는 누가 될 것인가!</p>
+    </footer>
+  </div>
+</body>
+</html>

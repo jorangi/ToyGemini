@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카라스노 vs 시라토리자와</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #2c2c2c;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        h1 {
+            color: #ff9900;
+            border-bottom: 3px solid #ff9900;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .match-result {
+            background-color: #3d3d3d;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        .match-result h2 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .vs {
+            font-size: 2em;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .team {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+        }
+        .karasuno { color: #ff6f00; }
+        .shiratorizawa { color: #8a2be2; }
+        .winner {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #4CAF50;
+        }
+        p { line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>미야기 현 대표 결정전 결승</h1>
+        
+        <div class="match-result">
+            <h2>최종 경기 결과</h2>
+            <div>
+                <span class="team karasuno">카라스노 고교</span>
+                <span class="vs">VS</span>
+                <span class="team shiratorizawa">시라토리자와 학원</span>
+            </div>
+            <h3>세트 스코어 3 : 2</h3>
+            <div class="winner">
+                🏆 최종 승리: 카라스노 고교 🏆
+            </div>
+        </div>
+
+        <p>
+            왕좌를 향한 치열한 접전 끝에, <strong class="karasuno">'나는 까마귀' 카라스노</strong>가 <strong class="shiratorizawa">'절대 왕자' 시라토리자와</strong>를 꺾고 봄철 고교 배구 대회 전국 진출을 확정지었습니다!
+        </p>
+        <p>
+            마지막 순간까지 손에 땀을 쥐게 한 명승부였습니다. 선수들의 열정과 투지에 큰 박수를 보냅니다!
+        </p>
+    </div>
+</body>
+</html>

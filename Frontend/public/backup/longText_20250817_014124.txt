@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시라토리자와 vs 이타치야마</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        .container { width: 80%; margin: 20px auto; background-color: #fff; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; }
+        h1 { text-align: center; color: #555; }
+        .match-info { display: flex; justify-content: space-around; align-items: center; margin-top: 30px; }
+        .team { text-align: center; padding: 15px; border: 1px solid #ddd; border-radius: 5px; flex: 1; margin: 0 10px; background-color: #f9f9f9; }
+        .team h2 { margin-top: 0; color: #777; }
+        .team.shiratorizawa h2 { color: #800080; } /* Purple */
+        .team.itachiyama h2 { color: #000080; } /* Navy */
+        .score { font-size: 2em; font-weight: bold; margin: 10px 0; color: #333; }
+        .details { margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px; }
+        .details h3 { color: #666; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏐 시라토리자와 학원 vs 이타치야마 학원 🏐</h1>
+        <p style="text-align: center; font-style: italic;">최고의 배구 명문고들의 불꽃 튀는 대결!</p>
+
+        <div class="match-info">
+            <div class="team shiratorizawa">
+                <h2>시라토리자와 학원</h2>
+                <p><strong>에이스:</strong> 우시지마 와카토시</p>
+                <p><strong>특징:</strong> 압도적인 파워와 조직력</p>
+                <p class="score">3</p>
+            </div>
+            <div class="team itachiyama">
+                <h2>이타치야마 학원</h2>
+                <p><strong>에이스:</strong> 사쿠사 키요오미</p>
+                <p><strong>특징:</strong> 철벽 수비와 날카로운 공격</p>
+                <p class="score">2</p>
+            </div>
+        </div>
+
+        <div class="details">
+            <h3>경기 요약</h3>
+            <p>이번 경기는 두 학교의 자존심을 건 치열한 승부였습니다. 시라토리자와의 강력한 공격과 이타치야마의 끈질긴 수비가 맞붙어, 마지막까지 예측할 수 없는 명승부가 펼쳐졌습니다.</p>
+            
+            <h3>주요 선수</h3>
+            <ul>
+                <li><strong>시라토리자와:</strong> 우시지마 와카토시 (WS), 텐도 사토리 (MB), 시라부 켄지로 (S)</li>
+                <li><strong>이타치야마:</strong> 사쿠사 키요오미 (WS), 코모리 모토야 (L)</li>
+            </ul>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9em; color: #888;">더 많은 정보는 곧 업데이트됩니다!</p>
+    </div>
+</body>
+</html>

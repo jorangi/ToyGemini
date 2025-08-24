@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤럭시 S24 - 새로운 시대의 시작</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #000; color: #fff; padding: 20px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; }
+        .container { width: 90%; margin: auto; overflow: hidden; padding: 20px 0; }
+        .hero { background: url('https://via.placeholder.com/1500x500?text=Galaxy+S24+Hero') no-repeat center center/cover; color: #fff; text-align: center; padding: 100px 0; }
+        .hero h2 { font-size: 3em; margin-bottom: 10px; }
+        .hero p { font-size: 1.2em; margin-bottom: 30px; }
+        .btn { display: inline-block; background-color: #007bff; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background-color 0.3s ease; }
+        .btn:hover { background-color: #0056b3; }
+        .features { display: flex; justify-content: space-around; flex-wrap: wrap; padding: 40px 0; }
+        .feature-item { background-color: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin: 15px; padding: 20px; text-align: center; width: 30%; min-width: 280px; }
+        .feature-item img { max-width: 100px; margin-bottom: 15px; }
+        .feature-item h3 { font-size: 1.5em; margin-bottom: 10px; color: #007bff; }
+        .feature-item p { font-size: 1em; line-height: 1.6; }
+        footer { background-color: #333; color: #fff; text-align: center; padding: 20px 0; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Samsung Galaxy S24</h1>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>새로운 AI 경험의 시작</h2>
+            <p>갤럭시 S24와 함께 당신의 일상을 더욱 스마트하게 변화시키세요.</p>
+            <a href="#" class="btn">자세히 알아보기</a>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="features">
+            <div class="feature-item">
+                <img src="https://via.placeholder.com/100x100?text=AI" alt="AI 기능">
+                <h3>혁신적인 AI 기능</h3>
+                <p>실시간 통역, 서클 투 서치 등 강력한 AI 기능으로 새로운 모바일 경험을 제공합니다.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://via.placeholder.com/100x100?text=Camera" alt="카메라">
+                <h3>초고화질 카메라</h3>
+                <p>어떤 환경에서도 선명하고 생생한 사진과 동영상을 촬영할 수 있습니다.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://via.placeholder.com/100x100?text=Performance" alt="성능">
+                <h3>최강의 퍼포먼스</h3>
+                <p>최신 프로세서와 최적화된 소프트웨어로 끊김 없는 사용 환경을 제공합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Samsung. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북산 vs 능남 가상 대결</title>
+    <style>
+        body { font-family: 'Malgun Gothic', sans-serif; background-color: #f0f2f5; color: #333; text-align: center; padding: 20px; }
+        h1 { color: #d9534f; }
+        .container { display: flex; justify-content: space-around; margin-top: 40px; flex-wrap: wrap; }
+        .team { background-color: white; border: 2px solid #ccc; border-radius: 10px; padding: 20px; width: 45%; min-width: 300px; margin: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .team h2 { border-bottom: 2px solid; padding-bottom: 10px; margin-bottom: 20px; }
+        .team.buksan h2 { color: #c9302c; border-color: #c9302c; }
+        .team.neungnam h2 { color: #337ab7; border-color: #337ab7; }
+        ul { list-style: none; padding: 0; }
+        li { background-color: #f9f9f9; margin: 5px 0; padding: 10px; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>🏀 북산 vs 능남, 세기의 대결! 🏀</h1>
+    <p>슬램덩크 팬들이 가장 기다려온 바로 그 매치업! 당신이 생각하는 승리팀은?</p>
+    <div class="container">
+        <div class="team buksan">
+            <h2>북산 (SHOHOKU)</h2>
+            <ul>
+                <li>PG. 송태섭 (Miyagi Ryota)</li>
+                <li>SG. 정대만 (Mitsui Hisashi)</li>
+                <li>SF. 서태웅 (Rukawa Kaede)</li>
+                <li>PF. 강백호 (Sakuragi Hanamichi)</li>
+                <li>C. 채치수 (Akagi Takenori)</li>
+            </ul>
+        </div>
+        <div class="team neungnam">
+            <h2>능남 (RYONAN)</h2>
+            <ul>
+                <li>PG. 이정환 (Maki Shinichi) - ※가상</li>
+                <li>SG. 신준섭 (Jin Souichirou) - ※가상</li>
+                <li>SF. 윤대협 (Sendoh Akira)</li>
+                <li>PF. 황태산 (Fukuda Kicchou)</li>
+                <li>C. 변덕규 (Uozumi Jun)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

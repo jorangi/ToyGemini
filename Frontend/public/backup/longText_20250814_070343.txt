@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시라토리자와 vs 아오바죠사이</title>
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 900px; margin: auto; background-color: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; }
+        h1 { color: #1e3a8a; border-bottom: 3px solid #1e3a8a; padding-bottom: 10px; }
+        .match-title { font-size: 2em; margin-bottom: 20px; }
+        .team-container { display: flex; justify-content: space-around; align-items: flex-start; margin-top: 30px; }
+        .team { width: 45%; padding: 15px; border-radius: 8px; }
+        .shiratorizawa { background-color: #f3e8ff; border: 2px solid #8b5cf6; }
+        .aobajohsai { background-color: #e0f2f1; border: 2px solid #009688; }
+        .team h2 { font-size: 1.8em; margin-bottom: 15px; }
+        .shiratorizawa h2 { color: #8b5cf6; }
+        .aobajohsai h2 { color: #009688; }
+        .player-list { list-style: none; padding: 0; text-align: left; }
+        .player-list li { background-color: #ffffff; margin-bottom: 10px; padding: 10px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; align-items: center; }
+        .player-list .ace { font-weight: bold; color: #d97706; }
+        .player-list .position { font-size: 0.9em; color: #666; margin-left: 10px; }
+        .analysis { margin-top: 40px; text-align: left; padding: 20px; background-color: #fffbe6; border: 1px solid #facc15; border-radius: 8px; }
+        .analysis h3 { color: #ca8a04; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><span class="match-title">세기의 대결: 시라토리자와 vs 아오바죠사이</span></h1>
+
+        <div class="team-container">
+            <div class="team shiratorizawa">
+                <h2>시라토리자와 학원</h2>
+                <ul class="player-list">
+                    <li><span class="ace">우시지마 와카토시</span> <span class="position">주장, 윙 스파이커 (에이스)</span></li>
+                    <li>오오히라 레온 <span class="position">윙 스파이커</span></li>
+                    <li>텐도 사토리 <span class="position">미들 블로커 (게스 블록)</span></li>
+                    <li>고시키 츠토무 <span class="position">윙 스파이커</span></li>
+                    <li>시라부 켄지로 <span class="position">세터</span></li>
+                    <li>카와니시 타이치 <span class="position">미들 블로커</span></li>
+                    <li>야마가타 하야토 <span class="position">리베로</span></li>
+                </ul>
+            </div>
+
+            <div class="team aobajohsai">
+                <h2>아오바죠사이 고교</h2>
+                <ul class="player-list">
+                    <li><span class="ace">오이카와 토오루</span> <span class="position">주장, 세터 (대왕님)</span></li>
+                    <li>이와이즈미 하지메 <span class="position">부주장, 윙 스파이커 (에이스)</span></li>
+                    <li>마츠카와 잇세이 <span class="position">미들 블로커</span></li>
+                    <li>하나마키 타카히로 <span class="position">윙 스파이커</span></li>
+                    <li>야하바 시게루 <span class="position">세터</span></li>
+                    <li>킨다이치 유타로 <span class="position">미들 블로커</span></li>
+                    <li>와타리 신지 <span class="position">리베로</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h3>카에데의 전력 분석 노트</h3>
+            <p><strong>시라토리자와:</strong> 절대적인 에이스 우시지마를 중심으로 한 강력한 파워 배구. 단순하지만 막을 수 없는 공격력과 텐도의 예측 불가능한 게스 블록이 특징이에요. 그야말로 왕자의 품격이 느껴지는 팀이죠!</p>
+            <p><strong>아오바죠사이:</strong> 천재 세터 오이카와를 중심으로 한 조직적인 토털 배구. 오이카와가 각 스파이커의 능력을 100% 끌어내는 모습은 정말 예술적이에요. 팀원들 간의 신뢰와 유대감이 최대의 무기랍니다.</p>
+            <p><strong>총평:</strong> 창과 방패의 대결이라기보단, '절대적인 힘'과 '궁극의 조직력'의 충돌이라고 할 수 있겠네요! 어느 쪽이 이겨도 이상하지 않을 명승부, 정말 기대되지 않나요? 후훗.</p>
+        </div>
+    </div>
+</body>
+</html>

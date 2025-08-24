@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산왕공업 vs 해남대부속고 - 세기의 대결</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 800px;
+            text-align: center;
+        }
+        h1 {
+            color: #1a237e;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #ffab00;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #c62828;
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .team {
+            margin-top: 40px;
+        }
+        .team-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffab00;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>산왕공업 vs 해남대부속고</h1>
+        <p>고교 농구의 정점이자, 끝나지 않은 신화. 전국 최강의 두 팀, 산왕공업과 해남대부속고의 가상 대결을 팬사이트에서 재구성합니다. 각 팀의 전력과 주요 선수들을 분석하며 세기의 대결을 미리 만나보세요!</p>
+        
+        <div class="team">
+            <h2>절대왕자, 산왕공업 (Sannoh)</h2>
+            <p>지난 3년간 전국대회를 제패한 고교 농구계의 절대 강자. 철벽의 디펜스와 빈틈없는 공격력으로 상대를 압도합니다. 모든 포지션에 전국 최고 레벨의 선수가 포진해 있으며, 특히 주장 신현철과 에이스 정우성은 팀의 핵심입니다.</p>
+        </div>
+
+        <div class="team">
+            <h2>도전자, 해남대부속고 (Kainan)</h2>
+            <p>17년 연속 전국대회 진출에 빛나는 전통의 강호. '제왕' 이정환을 중심으로 한 강력한 리더십과 조직력이 최대 무기입니다. 신준섭의 정교한 3점슛과 고민구의 골밑 장악력 또한 해남의 자랑입니다.</p>
+        </div>
+    </div>
+</body>
+</html>

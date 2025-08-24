@@ -1,0 +1,24 @@
+{
+  "tools": [
+    {
+      "name": "manage_web_content",
+      "description": "Pattern macro: safely update content to a target file by performing backup -> write in one call. Reusable for long text/HTML/code. Falls back to DEFAULT_OUTPUT_PATH if no path is provided.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path":   { "type": "string", "description": "Optional explicit target path." },
+          "output_path": { "type": "string", "description": "Optional alternative path used when file_path is absent." },
+          "content":     { "type": "string", "description": "Long text, HTML, Code, or Markdown content." }
+        },
+        "required": ["content"]
+      },
+      "tags": ["macro", "pattern:backup+write", "scope:any", "sink:auto-or-explicit"],
+      "dependency_graph": {
+        "nodes": [
+          { "tool_name": "backup_file" },
+          { "tool_name": "write_file" }
+        ]
+      }
+    }
+  ]
+}

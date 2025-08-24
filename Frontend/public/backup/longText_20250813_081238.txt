@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북산 vs 해남부속고</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            color: #ffcc00;
+            border-bottom: 2px solid #ffcc00;
+            padding-bottom: 10px;
+        }
+        .match-up {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .team {
+            width: 45%;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .team-shohoku {
+            background-color: #c0392b;
+            border: 2px solid #e74c3c;
+        }
+        .team-kainan {
+            background-color: #8e44ad;
+            border: 2px solid #9b59b6;
+        }
+        .team h2 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .team ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .team li {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 8px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .vs {
+            align-self: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>세기의 대결: 북산 vs 해남대부속고</h1>
+        <div class="match-up">
+            <div class="team team-shohoku">
+                <h2>북산 (SHOHOKU)</h2>
+                <ul>
+                    <li>No. 4 채치수 (C)</li>
+                    <li>No. 7 송태섭 (PG)</li>
+                    <li>No. 10 강백호 (PF)</li>
+                    <li>No. 11 서태웅 (SF)</li>
+                    <li>No. 14 정대만 (SG)</li>
+                </ul>
+            </div>
+            <div class="vs">VS</div>
+            <div class="team team-kainan">
+                <h2>해남 (KAINAN)</h2>
+                <ul>
+                    <li>No. 4 이정환 (PG)</li>
+                    <li>No. 5 고민구 (C)</li>
+                    <li>No. 6 신준섭 (SG)</li>
+                    <li>No. 9 김수겸 (SF)</li>
+                    <li>No. 10 전호장 (PF)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

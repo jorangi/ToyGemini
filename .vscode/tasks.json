@@ -3,8 +3,14 @@
     "tasks": [
         {
             "label": "Run Backend",
-            "type": "shell",
-            "command": ".venv\\Scripts\\activate && uvicorn main:app --reload",
+            // ✨ --- type을 "shell"에서 "process"로 변경합니다 --- ✨
+            "type": "process", 
+            "command": "${workspaceFolder}/Backend/.venv/Scripts/uvicorn.exe",
+            "args": [
+                "main:app",
+                "--reload",
+                "--reload-exclude=tools/generated_*"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/Backend"
             },
