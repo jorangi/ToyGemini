@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy S24 Ultra, S24+, S24 | Galaxy AI is here | Samsung 대한민국</title>
+    <style>
+        :root {
+            --primary-color: #0057b8;
+            --secondary-color: #007bff;
+            --background-color: #f8f9fa;
+            --text-color: #212529;
+            --light-gray: #e9ecef;
+            --white-color: #ffffff;
+            --dark-gray: #495057;
+            --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-size: 16px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        header.main-header {
+            background-color: var(--white-color);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--light-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.samsung.com/is/image/samsung/assets/global/galaxy/galaxy-s24/galaxy-s24-ultra_highlights_kv.jpg') no-repeat center center/cover;
+            color: var(--white-color);
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            font-weight: 300;
+        }
+
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2em;
+            color: var(--dark-gray);
+            max-width: 800px;
+            margin: 0 auto 60px auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .feature-highlight {
+            background-color: #eef4ff;
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .feature-highlight ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-highlight li {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .feature-highlight strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 50px;
+            font-size: 0.95em;
+        }
+
+        .spec-table th, .spec-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .spec-table th {
+            background-color: #f2f2f2;
+            font-weight: 600;
+            width: 25%;
+        }
+
+        .spec-table td {
+            background-color: var(--white-color);
+        }
+
+        .spec-table tr:last-child th, .spec-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .color-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 80px;
+            text-align: center;
+        }
+
+        .color-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 10px auto;
+            border: 2px solid var(--light-gray);
+        }
+
+        .color-name {
+            font-size: 0.9em;
+            color: var(--dark-gray);
+        }
+
+        footer {
+            background-color: #212529;
+            color: #adb5bd;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white-color);
+        }
+
+        .footer-copyright {
+            font-size: 0.9em;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+            .section-title {
+                font-size: 2.2em;
+            }
+            nav ul {
+                display: none; /* Simple responsive behavior for example */
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Galaxy S24 Series</a>
+                <ul>
+                    <li><a href="#galaxy-ai">Galaxy AI</a></li>
+                    <li><a href="#camera">카메라</a></li>
+                    <li><a href="#performance">퍼포먼스</a></li>
+                    <li><a href="#design">디자인</a></li>
+                    <li><a href="#specs">스펙</a></li>
+                    <li><a href="#cta">구매하기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Galaxy AI is here</h1>
+        <p>갤럭시 S24 시리즈와 함께 새로운 시대의 모바일 경험을 시작하세요. 일상을 혁신하는 AI 기술이 당신의 손 안에서 펼쳐집니다. 검색하고, 소통하고, 창작하는 모든 방식이 완전히 새로워집니다.</p>
+        <a href="#cta" class="cta-button">지금 바로 경험하기</a>
+    </section>
+
+    <main>
+        <div class="container">
+            <section id="galaxy-ai" class="section">
+                <h2 class="section-title">새로운 시대를 여는 Galaxy AI</h2>
+                <p class="section-subtitle"><strong>Galaxy AI</strong>는 당신의 손안에서 무한한 가능성을 열어줍니다. 복잡한 검색부터 언어의 장벽을 허무는 소통, 전문가 수준의 사진 편집까지, 이제껏 경험하지 못한 스마트한 일상을 선사합니다. 당신의 창의력과 생산성을 극대화하는 개인 맞춤형 AI 비서를 만나보세요.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>서클 투 서치 (Circle to Search)</h3>
+                        <p>궁금증이 생기는 순간, 더 이상 앱을 전환할 필요가 없습니다. 이미지, 영상, 텍스트 위에서 S펜이나 손가락으로 궁금한 부분에 동그라미를 그리기만 하세요. 즉시 Google 검색 결과가 눈앞에 나타납니다. SNS 피드에서 본 멋진 옷, 여행 브이로그에 나온 낯선 건축물, 친구가 보낸 사진 속 식물의 이름까지, 망설임 없이 바로 검색하고 확인하세요. 정보 탐색의 패러다임을 바꾸는 혁신적인 경험입니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>실시간 통역 (Live Translate)</h3>
+                        <p>언어의 장벽이 사라집니다. 통화 중에 '실시간 통역' 기능을 사용하면, 상대방의 말을 내가 설정한 언어로, 나의 말을 상대방의 언어로 즉시 통역해줍니다. 마치 개인 통역사와 함께하는 것처럼 자연스러운 대화가 가능합니다. 문자 메시지 역시 실시간으로 번역되어, 전 세계 누구와도 막힘없이 소통할 수 있습니다. 비즈니스부터 여행까지, 당신의 세상이 더욱 넓어집니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>포토 어시스트 (Photo Assist)</h3>
+                        <p>당신이 상상하는 완벽한 사진, AI가 현실로 만들어줍니다. '포토 어시스트'의 생성형 편집 기능을 사용해 보세요. 사진의 구도가 아쉽다면 피사체를 원하는 위치로 옮기거나 크기를 조절할 수 있습니다. AI가 비어버린 배경을 감쪽같이 채워주어 자연스러운 결과물을 완성합니다. 원치 않는 그림자나 반사된 빛, 사진 속 불필요한 인물을 손쉽게 지우는 것도 가능합니다. 이제 모든 사진이 당신의 의도대로 작품이 됩니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>노트 어시스트 (Note Assist)</h3>
+                        <p>정신없이 받아 적은 회의록이나 강의 노트, 이제 AI에게 맡기세요. '노트 어시스트'는 긴 글을 핵심만 요약하여 한눈에 파악하기 쉽게 정리해줍니다. 자동으로 서식을 맞춰주거나, 제목과 글머리 기호를 추가하여 체계적인 문서로 변환할 수도 있습니다. 손글씨로 쓴 메모도 가지런한 텍스트로 변환하고, 오탈자까지 교정해줍니다. 정보 정리에 들이는 시간을 아끼고, 더 중요한 일에 집중하세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>챗 어시스트 (Chat Assist)</h3>
+                        <p>메시지를 보낼 때, 어떤 톤으로 말해야 할지 고민되시나요? '챗 어시스트'가 상황에 맞는 최적의 표현을 제안합니다. 격식 있는 업무 이메일부터 재치 있는 SNS 댓글까지, 단 몇 번의 탭으로 문장의 톤앤매너를 바꿀 수 있습니다. 다른 언어로 메시지를 보낼 때도 실시간 번역 기능이 완벽한 소통을 돕습니다. 당신의 커뮤니케이션 능력을 한 단계 업그레이드하세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>생성형 배경화면 (Generative Wallpaper)</h3>
+                        <p>나만의 개성을 담은 스마트폰 배경화면을 만들어보세요. 몇 가지 키워드와 스타일을 선택하면, Galaxy AI가 세상에 단 하나뿐인 이미지를 생성해줍니다. '신비로운 숲속의 여우'나 '사이버펑크 스타일의 도시 야경'처럼 상상하는 모든 것을 배경화면으로 만들 수 있습니다. 매일 새로운 영감으로 당신의 하루를 채워보세요.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="camera" class="section">
+                <h2 class="section-title">ProVisual 엔진으로 완성된 프로급 카메라</h2>
+                <p class="section-subtitle">갤럭시 S24 시리즈의 카메라는 단순한 사진 촬영을 넘어 예술의 경지로 이끌어줍니다. 압도적인 하드웨어와 AI 기반의 <strong>ProVisual 엔진</strong>이 결합되어 어떤 환경에서도 디테일이 살아있는 선명한 사진과 영상을 촬영할 수 있습니다. 이제 당신의 모든 순간이 작품이 됩니다.</p>
+
+                <div class="feature-highlight">
+                    <ul>
+                        <li><strong>최대 2억 화소의 압도적 해상도 (S24 Ultra):</strong> 눈으로 보는 것 이상의 디테일을 담아냅니다. 사진의 일부를 확대하고 잘라내도 선명함이 그대로 유지되어, 전혀 다른 느낌의 새로운 사진을 창조할 수 있습니다.</li>
+                        <li><strong>AI 기반 스페이스 줌:</strong> 멀리 있는 피사체도 바로 앞에 있는 것처럼 생생하게 포착합니다. 광학 줌과 AI 기반의 디지털 줌이 결합된 새로운 쿼드 텔레 시스템은 2배, 3배, 5배, 10배 줌에서도 광학 수준의 놀라운 화질을 제공합니다. 최대 100배 스페이스 줌으로 달 표면까지 선명하게 담아보세요.</li>
+                        <li><strong>향상된 나이토그래피:</strong> 어둠은 더 이상 장애물이 아닙니다. 더 커진 픽셀과 향상된 OIS(광학식 손떨림 보정) 기능, 그리고 AI ISP 기술이 저조도 환경에서도 노이즈를 획기적으로 줄여주고, 더 많은 빛을 포착하여 밝고 선명한 사진과 동영상을 촬영하게 해줍니다. 밤의 풍경, 소중한 사람들과의 저녁 식사, 화려한 콘서트 현장까지 생생하게 기록하세요.</li>
+                        <li><strong>슈퍼 HDR 및 Expert RAW:</strong> 촬영 전, 갤러리에서 보기 전, SNS에 공유하기 전까지 모든 단계에서 실제와 가장 가까운 색감과 명암을 표현하는 슈퍼 HDR을 경험하세요. 전문가를 위한 Expert RAW 앱은 16비트 RAW 파일을 제공하여, 후보정을 통해 자신만의 색감과 스타일을 자유롭게 표현할 수 있는 무한한 가능성을 열어줍니다.</li>
+                    </ul>
+                </div>
+                <p class="text-center">갤럭시 S24 시리즈의 카메라는 단순한 기록을 넘어, 당신의 시선을 예술로 승화시키는 가장 강력한 도구입니다. 일상의 모든 순간을 프로페셔널한 작품으로 남겨보세요. AI가 최적의 촬영 설정을 제안하고, 촬영 후에는 포토 어시스트 기능으로 완벽하게 편집할 수 있습니다. 사진 촬영의 모든 과정이 그 어느 때보다 쉽고, 즐거워집니다.</p>
+            </section>
+
+            <section id="performance" class="section">
+                <h2 class="section-title">역대급 퍼포먼스, 게임과 멀티태스킹을 지배하다</h2>
+                <p class="section-subtitle">갤럭시 사상 가장 강력하고 스마트한 칩셋, <strong>'Snapdragon® 8 Gen 3 for Galaxy'</strong>가 탑재되어, 상상하는 모든 것을 현실로 만듭니다. 고사양 게임부터 복잡한 AI 연산, 다중 앱을 활용한 멀티태스킹까지, 모든 것이 막힘없이 부드럽게 이루어집니다.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>최적화된 게이밍 경험</h3>
+                        <p>더욱 강력해진 CPU와 GPU 성능으로 현실감 넘치는 그래픽과 빠른 반응 속도를 경험하세요. 실시간으로 빛의 경로를 추적하는 레이 트레이싱(Ray Tracing) 기술이 게임 속 그림자와 반사를 더욱 사실적으로 구현하여, 비교할 수 없는 몰입감을 선사합니다. 이제 모바일 게임의 수준이 한 차원 높아집니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>강력한 베이퍼 챔버 쿨링</h3>
+                        <p>장시간 게임을 하거나 고사양 작업을 해도 걱정 없습니다. 이전 모델보다 최대 1.9배 더 커진 베이퍼 챔버가 기기 내부의 열을 더욱 빠르고 효과적으로 방출합니다. 최적의 온도를 유지하여 최고의 성능을 꾸준히 발휘할 수 있도록 돕습니다. 이제 발열로 인한 성능 저하 없이 쾌적하게 즐기세요.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>하루 종일 지속되는 스마트 배터리</h3>
+                        <p>갤럭시 S24 시리즈의 대용량 배터리는 당신의 바쁜 하루를 온전히 지원합니다. AI가 사용 패턴을 학습하여 앱별로 전력 소비를 최적화하기 때문에, 더욱 오랜 시간 동안 스마트폰을 사용할 수 있습니다. 동영상 시청, 게임, 웹 서핑 등 당신이 원하는 모든 것을 배터리 걱정 없이 마음껏 즐기세요. 초고속 충전 기능으로 짧은 시간 안에 빠르게 충전하는 것도 가능합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="display" class="section">
+                <h2 class="section-title">가장 밝고 선명한 Dynamic AMOLED 2X</h2>
+                <p class="section-subtitle">갤럭시 스마트폰 사상 가장 밝은 디스플레이가 눈앞에 펼쳐집니다. 최대 2,600니트의 놀라운 최대 밝기로 강렬한 햇빛 아래에서도 콘텐츠를 선명하게 볼 수 있습니다. 이제 야외에서도 영상 시청이나 게임 플레이에 불편함이 없습니다.</p>
+                <div class="feature-highlight">
+                    <p><strong>비전 부스터 (Vision Booster)</strong> 기술은 주변 조명 환경을 자동으로 감지하여 화면의 색감과 명암비를 실시간으로 최적화합니다. 어두운 실내에서는 눈이 편안하도록, 밝은 야외에서는 콘텐츠가 잘 보이도록 알아서 조절해주어 언제 어디서나 최고의 시청 경험을 제공합니다.</p>
+                    <p>또한, <strong>1Hz부터 120Hz까지</strong> 자동으로 조절되는 가변 주사율은 스크롤링과 게임 플레이 시에는 놀랍도록 부드러운 화면 움직임을, 정적인 화면에서는 배터리 소모를 최소화하는 효율성을 동시에 잡았습니다. 눈의 피로를 줄여주는 '편안하게 보기 기능(Eye Comfort Shield)'은 블루라이트를 효과적으로 제어하여 당신의 눈 건강까지 생각합니다.</p>
+                </div>
+            </section>
+
+            <section id="design" class="section">
+                <h2 class="section-title">견고함과 우아함의 완벽한 조화</h2>
+                <p class="section-subtitle">갤럭시 S24 시리즈는 미학적으로 완성된 디자인과 타협 없는 내구성을 모두 갖추었습니다. 손에 쥐었을 때 느껴지는 완벽한 그립감과 고급스러운 소재는 당신의 품격을 한층 더 높여줍니다.</p>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>갤럭시 S24 Ultra: 티타늄의 위엄</h3>
+                        <p>갤럭시 사상 최초로 프레임에 티타늄 소재를 적용하여, 역대급 견고함과 고급스러움을 자랑합니다. 티타늄은 가벼우면서도 강도가 높아 외부 충격으로부터 기기를 안전하게 보호합니다. 무광의 헤어라인 마감은 지문이 잘 묻어나지 않으며, 시간이 지나도 변치 않는 우아함을 선사합니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>갤럭시 S24 & S24+: 유려한 일체감</h3>
+                        <p>더욱 강화된 아머 알루미늄(Armor Aluminum) 프레임과 후면 글래스가 매끄럽게 이어지는 일체형 디자인은 미니멀리즘의 정수를 보여줍니다. 손에 착 감기는 슬림한 디자인과 편안한 그립감은 일상적인 사용에 최적화되어 있습니다. 감각적인 컬러 라인업은 당신의 스타일을 완성하는 패션 아이템이 됩니다.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Corning® Gorilla® Armor</h3>
+                        <p>갤럭시 S24 Ultra의 전면 디스플레이는 Corning® Gorilla® Armor로 보호됩니다. 일반 유리 대비 반사율을 최대 75%까지 줄여 다양한 조명 환경에서도 화면을 선명하게 볼 수 있으며, 일상적인 스크래치에 대한 저항력도 획기적으로 개선되었습니다. 최고의 디스플레이를 최상의 상태로 오랫동안 유지하세요.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-center" style="margin-top: 60px; font-size: 1.8em;">자연에서 영감을 받은 컬러</h3>
+                <p class="text-center" style="max-width: 700px; margin: 10px auto 40px auto;">갤럭시 S24 시리즈는 지구의 광물에서 영감을 받은 세련되고 차분한 색상들로 구성되었습니다. 당신의 개성을 표현해 줄 완벽한 컬러를 찾아보세요.</p>
+                <div class="color-options">
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #8a8a8a;"></div>
+                        <div class="color-name">티타늄 그레이</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #3e3e3e;"></div>
+                        <div class="color-name">티타늄 블랙</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #a49ac4;"></div>
+                        <div class="color-name">티타늄 바이올렛</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #e4d2a7;"></div>
+                        <div class="color-name">티타늄 옐로우</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #5b5f8d;"></div>
+                        <div class="color-name">코발트 바이올렛</div>
+                    </div>
+                    <div class="color-swatch">
+                        <div class="color-circle" style="background-color: #f0e68c;"></div>
+                        <div class="color-name">앰버 옐로우</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="s-pen" class="section">
+                <h2 class="section-title">S펜, AI를 만나 더욱 강력해지다</h2>
+                <p class="section-subtitle">갤럭시 S24 Ultra에 내장된 S펜은 단순한 필기구를 넘어, 당신의 생산성과 창의력을 극대화하는 혁신적인 도구입니다. 이제 Galaxy AI와 만나 더욱 스마트하고 강력한 기능을 제공합니다.</p>
+                <p class="text-center" style="max-width: 800px; margin: auto;">정확하고 빠른 반응 속도로 실제 펜과 같은 필기감을 제공하는 S펜으로 떠오르는 아이디어를 즉시 기록하세요. '서클 투 서치' 기능과 연동하여 화면의 어떤 것이든 동그라미를 그려 바로 검색할 수 있으며, '노트 어시스트'를 통해 손글씨 메모를 깔끔하게 정리하고 요약할 수 있습니다. S펜의 에어 액션 기능으로 사진을 촬영하고, 프레젠테이션을 제어하는 등 원격 컨트롤도 가능합니다. S펜과 함께라면 당신의 가능성은 무한해집니다.</p>
+            </section>
+
+            <section id="specs" class="section">
+                <h2 class="section-title">한눈에 보는 스펙 비교</h2>
+                <p class="section-subtitle">당신에게 꼭 맞는 갤럭시 S24를 찾아보세요. 세 가지 모델의 상세 스펙을 비교해보고 최적의 선택을 하실 수 있습니다.</p>
+
+                <table class="spec-table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>Galaxy S24 Ultra</th>
+                            <th>Galaxy S24+</th>
+                            <th>Galaxy S24</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>디스플레이</th>
+                            <td>172.5 mm (6.8”) Dynamic AMOLED 2X, 1-120Hz 가변 주사율, 2600nit</td>
+                            <td>169.1 mm (6.7”) Dynamic AMOLED 2X, 1-120Hz 가변 주사율, 2600nit</td>
+                            <td>156.4 mm (6.2”) Dynamic AMOLED 2X, 1-120Hz 가변 주사율, 2600nit</td>
+                        </tr>
+                        <tr>
+                            <th>해상도</th>
+                            <td>3120 x 1440 (Quad HD+)</td>
+                            <td>3120 x 1440 (Quad HD+)</td>
+                            <td>2340 x 1080 (FHD+)</td>
+                        </tr>
+                        <tr>
+                            <th>카메라 (후면)</th>
+                            <td>200MP 광각, 12MP 초광각, 50MP 망원(5x 광학줌), 10MP 망원(3x 광학줌)</td>
+                            <td>50MP 광각, 12MP 초광각, 10MP 망원(3x 광학줌)</td>
+                            <td>50MP 광각, 12MP 초광각, 10MP 망원(3x 광학줌)</td>
+                        </tr>
+                        <tr>
+                            <th>카메라 (전면)</th>
+                            <td>12MP 듀얼 픽셀</td>
+                            <td>12MP 듀얼 픽셀</td>
+                            <td>12MP 듀얼 픽셀</td>
+                        </tr>
+                        <tr>
+                            <th>프로세서</th>
+                            <td>Snapdragon® 8 Gen 3 for Galaxy</td>
+                            <td>Snapdragon® 8 Gen 3 for Galaxy</td>
+                            <td>Snapdragon® 8 Gen 3 for Galaxy</td>
+                        </tr>
+                        <tr>
+                            <th>RAM</th>
+                            <td>12GB</td>
+                            <td>12GB</td>
+                            <td>8GB</td>
+                        </tr>
+                        <tr>
+                            <th>저장 공간</th>
+                            <td>256GB / 512GB / 1TB</td>
+                            <td>256GB / 512GB</td>
+                            <td>256GB / 512GB</td>
+                        </tr>
+                        <tr>
+                            <th>배터리</th>
+                            <td>5,000mAh (Typical)</td>
+                            <td>4,900mAh (Typical)</td>
+                            <td>4,000mAh (Typical)</td>
+                        </tr>
+                        <tr>
+                            <th>S펜 지원</th>
+                            <td><strong>내장형 S펜 지원</strong></td>
+                            <td>미지원</td>
+                            <td>미지원</td>
+                        </tr>
+                        <tr>
+                            <th>소재</th>
+                            <td>티타늄 프레임, Corning® Gorilla® Armor</td>
+                            <td>아머 알루미늄 프레임, Corning® Gorilla® Glass Victus® 2</td>
+                            <td>아머 알루미늄 프레임, Corning® Gorilla® Glass Victus® 2</td>
+                        </tr>
+                        <tr>
+                            <th>크기 (세로x가로x두께)</th>
+                            <td>162.3 x 79.0 x 8.6 mm</td>
+                            <td>158.5 x 75.9 x 7.7 mm</td>
+                            <td>147.0 x 70.6 x 7.6 mm</td>
+                        </tr>
+                        <tr>
+                            <th>무게</th>
+                            <td>232g</td>
+                            <td>196g</td>
+                            <td>167g</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="cta" class="section text-center">
+                <h2 class="section-title">지금 바로 갤럭시 S24를 만나보세요</h2>
+                <p class="section-subtitle">혁신의 중심에 있는 갤럭시 S24 시리즈와 함께 당신의 가능성을 한 단계 끌어올리세요. 가까운 매장이나 온라인 스토어에서 직접 경험해보실 수 있습니다. 특별한 구매 혜택과 함께 새로운 모바일 AI 시대를 가장 먼저 시작하세요.</p>
+                <a href="#" class="cta-button">자세히 보기 및 구매하기</a>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">회사소개</a>
+                <a href="#">채용</a>
+                <a href="#">투자자 정보</a>
+                <a href="#">뉴스룸</a>
+                <a href="#">지속가능경영</a>
+            </div>
+            <p class="footer-copyright">
+                이 사이트는 실제 삼성전자 웹사이트가 아니며, 포트폴리오 목적으로 제작되었습니다.<br>
+                &copy; 2024 Samsung Electronics Co., Ltd. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

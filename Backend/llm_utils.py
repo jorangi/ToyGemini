@@ -12,7 +12,10 @@ if not GEMINI_API_KEY:
 
 # 비동기 클라이언트를 여기서 생성
 client = genai.Client()
+from collections import defaultdict
+CALL_COUNTER = defaultdict(int)
 
+# ==== [수정] call_gemini_agent 내부, config 생성부 ====
 async def call_gemini_agent(
     prompt_content: list[types.Content],
     use_tools: bool = True,
@@ -86,13 +89,31 @@ async def call_gemini_agent(
             }
             if use_tools and tools is not None:
                 config_args['tools'] = tools
-
+            config = types.GenerateContentConfig(**config_args)
             response = await client.aio.models.generate_content(
                 model=model_name, 
                 contents=safe_prompt,
-                config=types.GenerateContentConfig(**config_args)
+                config=config
             )
-            
+            # 호출 카운팅 로그
+            try:
+                CALL_COUNTER[model_name] += 1
+                print(f"[CALLS] model={model_name} total_calls={CALL_COUNTER[model_name]}")
+            except Exception:
+                pass
+
+            # 사용량(토큰) 로그
+            try:
+                usage = getattr(response, "usage_metadata", None)
+                if usage:
+                    print(
+                        f"[USAGE] model={model_name} "
+                        f"input={getattr(usage, 'prompt_token_count', None)} "
+                        f"output={getattr(usage, 'candidates_token_count', None)} "
+                        f"total={getattr(usage, 'total_token_count', None)}"
+                    )
+            except Exception as e:
+                print(f"[USAGE] read-failed: {e}")
             #print("📥 Gemini 응답 전체:", response)
             print(f"[✅ 모델 성공] '{model_name}' 모델 호출에 성공했습니다.")
             return response, model_name # ✨ 성공한 모델 이름 반환

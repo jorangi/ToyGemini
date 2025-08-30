@@ -205,58 +205,6 @@ def sync_tools_with_vector_db(definitions: list[types.FunctionDeclaration], coll
         print(f"✅ Successfully added {len(definitions_to_add)} tools to VectorDB.")
     else:
         print("✅ VectorDB is already up-to-date with all loaded tools.")
-def _parse_definitions_blob(raw_text: str):
-    """
-    raw_text를 JSON/JSON5/JSONL/혼합 리스트 등 다양한 포맷에서
-    [ { ..tool dict.. }, ... ] 형태의 리스트로 정규화한다.
-    """
-    def _as_list(x):
-        # dict 한 개면 리스트로 감싸기
-        if isinstance(x, dict):
-            # {"tools":[...]} 형태면 그대로 tools
-            if "tools" in x and isinstance(x["tools"], list):
-                return [i for i in x["tools"] if isinstance(i, (dict, str))]
-            return [x]
-        if isinstance(x, list):
-            return [i for i in x if isinstance(i, (dict, str))]
-        return []
-
-    # 1) 우선 JSON5로 통짜 파싱을 시도
-    try:
-        parsed = json5.loads(raw_text)
-        items = _as_list(parsed)
-        # 리스트 안의 문자열 요소는 개별적으로 다시 파싱
-        out = []
-        for item in items:
-            if isinstance(item, str):
-                try:
-                    out.append(json5.loads(item))
-                except Exception:
-                    continue
-            elif isinstance(item, dict):
-                out.append(item)
-        if out:
-            return out
-    except Exception:
-        pass
-
-    # 2) JSON Lines 시도 (줄마다 객체)
-    out = []
-    for ln in raw_text.splitlines():
-        ln = ln.strip()
-        if not ln or not ln.startswith("{") or not ln.endswith("}"):
-            continue
-        try:
-            obj = json5.loads(ln)
-            if isinstance(obj, dict):
-                out.append(obj)
-        except Exception:
-            continue
-    if out:
-        return out
-
-    # 3) 실패하면 빈 리스트
-    return []
 class ToolManager:
     def __init__(self):
         self.action_handlers = {}

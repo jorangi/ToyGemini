@@ -1,24 +1,21 @@
 import asyncio
-import random
 from pathlib import Path
 import json
 import json5
 import uuid, datetime
 from google.genai import types
 from llm_utils import call_gemini_agent
-from prompt_builder import build_prompt, extract_json_from_text
+from prompt_builder import build_prompt
 from sql_router import get_db_schema, Session, User, SessionLocal, ToolCallLog, save_message
-from metatools.handlers import run_optimization_workflow, generate_tool_definition_and_code, register_newly_generated_tool, handle_reload_skills
-from config import tool_manager, stream_text_by_char, safe_json_parse, MAX_AGENT_ITERATIONS, embedding_model, tool_collection, AGENT_STATE_PATH, load_model_priority
+from metatools.handlers import run_optimization_workflow
+from config import tool_manager, stream_text_by_char, MAX_AGENT_ITERATIONS, AGENT_STATE_PATH, load_model_priority
 from optimization_manager import OptimizationManager
-from tool_registry import ToolRegistry
-from metatools.tool_selector import decide_tool, propose_parameters
+from metatools.tool_selector import propose_parameters
 from config import BACKEND_DIR
 import re
-from metatools.tool_selector import classify_goal_with_llm
 from pathlib import Path
 from dataclasses import dataclass
-from typing import Optional, Deque, Dict, Any
+from typing import Deque, Dict
 from collections import deque
 from pathlib import Path as _P
 import os, json, re, hashlib, time
@@ -48,30 +45,6 @@ class _Effect:
     primary_path: str = ""
     aux_path: str = ""
     meta: dict | None = None
-
-def _adapt_action_params_for(handler, action: str, params: dict) -> dict:
-        """
-        STRICT MODE:
-        - 핸들러 시그니처에 정의된 키만 통과
-        - 동의어/별칭/자동치환 금지
-        - **kwargs 허용 핸들러는 그대로 통과
-        """
-        if not isinstance(params, dict):
-            return {}
-        try:
-            sig = inspect.signature(handler)
-        except Exception:
-            # 시그니처를 못 읽으면 있는 그대로 전달 (테스트 호환)
-            return params
-
-        # **kwargs 허용이면 필터링하지 않음
-        if any(p.kind == inspect.Parameter.VAR_KEYWORD for p in sig.parameters.values()):
-            return params
-
-        expected = set(sig.parameters.keys())
-        # 정확히 일치하는 키만 통과
-        return {k: v for k, v in params.items() if k in expected}
-
 class Agent:
     def __init__(self, user_goal: str, session_id: str, background_tasks, model_priority_list: list):
         self.tool_manager = tool_manager
@@ -634,10 +607,16 @@ class Agent:
             combined = (cur.rstrip() + "\n\n" + new_text) if cur.strip() else new_text
 
             if "append_file" in self.tool_manager.action_handlers and cur.strip():
-                await self.tool_manager.action_handlers["append_file"](file_path=path, content="\n\n" + new_text)
+                await self.tool_manager.action_handlers["append_file"](
+                    file_path=path,
+                    content="\n\n" + new_text
+                )
             elif "write_file" in self.tool_manager.action_handlers:
-                # ⚠️ 절대 새 텍스트만 쓰지 말고 항상 병합해서 write
-                await self.tool_manager.action_handlers["write_file"](file_path=path, content=combined)
+                # ⚠️ 새 텍스트만 덮어쓰지 말고 항상 병합해서 write
+                await self.tool_manager.action_handlers["write_file"](
+                    file_path=path,
+                    content=combined
+                )
             # self._written_paths 업데이트도 누락 없이
             try:
                 norm = str(_P(path).resolve())
@@ -1708,6 +1687,19 @@ class Agent:
     def _calc_target_chars(self, cap_tokens=65536, reserve=12000, tok_to_char=1.6):
         usable = max(2048, int(cap_tokens * 0.6) - reserve)
         return int(usable * tok_to_char)
+    def _render_final_answer(self, default_message: str) -> str:
+        """
+        보강 단계에서 저장해둔 remark가 있으면 우선 사용하고, 한 번 쓰면 비웁니다.
+        remark가 없으면 기본 문구(default_message)를 그대로 반환합니다.
+        """
+        remark = getattr(self, "_closing_remark", None)
+        try:
+            setattr(self, "_closing_remark", None)  # 한 번 쓰고 비워두기
+        except Exception:
+            pass
+        final_msg = (remark or default_message or "").strip()
+        # 완전 빈 문자열 방지용 안전장치
+        return final_msg if final_msg else "작업을 마쳤어요! 파일에서 확인해 주세요. 😊"
     async def _execute_tool(self, action: str, params: dict):
         """
         모든 도구 호출은 이 함수로만 들어오게 한다.
@@ -1732,23 +1724,26 @@ class Agent:
         # 2) 정규화
         ok, normed, err = self.tool_manager.ensure_args(action, params)
         if ok:
-            return await self._call_tool(action, normed)
+        # 비-하드코딩 방식: "단일 문자열 응답" 형태의 파라미터가 비어 있으면 remark로 채운다
+        # (도구명/키 이름에 의존하지 않고, 스키마 기반으로 '단일 string' 성격의 출력 파라미터를 찾는다)
+            try:
+                spec = getattr(self.tool_manager, "tool_catalog", {}).get(action, {}) or {}
+                props = (spec.get("parameters") or {}).get("properties") or {}
+                # remark가 있으면
+                closing = getattr(self, "_closing_remark", None)
+                if closing:
+                    # 출력용으로 보이는 string 필드를 하나 찾아 비어 있으면 채운다
+                    for k, v in props.items():
+                        if (v or {}).get("type") == "string":
+                            val = normed.get(k, "")
+                            # 값이 비었거나 너무 짧으면 대체
+                            if not isinstance(val, str) or len(val.strip()) < 2:
+                                normed[k] = str(closing)
+                                break
+            except Exception:
+                pass
 
-        # 3) 실패 시 '강 보강' 1회
-        if hasattr(self, "_maybe_enrich_text_payload_strong"):
-            params2 = await self._maybe_enrich_text_payload_strong(
-                action=action,
-                action_input=params,
-                tool_spec=tool_spec,
-                min_threshold=8000,                              # 더 엄격
-                min_chars=max(self._calc_target_chars(), 30000)  # 목표 길이 상향(문자)
-            )
-            ok2, normed2, err2 = self.tool_manager.ensure_args(action, params2)
-            if ok2:
-                return await self._call_tool(action, normed2)
-
-        # 4) 최후 수단: 있는 그대로 실행(또는 여기서 실패 반환)
-        return await self._call_tool(action, params)
+        return await self._call_tool(action, normed)
 
 
 
@@ -1832,10 +1827,17 @@ class Agent:
                     print(f"[PostWrite] finalize check skipped: {_e}")
         # 4) 최종 응답 처리
         if action == "final_response":
-            final_answer = (action_input or {}).get("answer", "")
+            # ⬇️ 변경: remark 우선 반영
+            base_answer = (action_input or {}).get("answer", "")
+            final_answer = self._render_final_answer(base_answer)
+
+            # action_input에도 반영해두면 아래 로깅/프롬프트 기록에도 동일 내용 사용됨
+            if isinstance(action_input, dict):
+                action_input["answer"] = final_answer
+
             print(f"[🏁 Final Answer] {final_answer}")
 
-                # 모델 기록
+            # (이하 기존 로깅/메모리/최적화 훅 그대로 유지)
             try:
                 if candidate:
                     self.prompt_content.append(self._as_content(candidate))
@@ -1848,7 +1850,7 @@ class Agent:
                     )
                 self.prompt_content.append(
                     types.Content(
-                        role="user",  # function_response는 user 역할 메시지에 담는 게 규약
+                        role="user",
                         parts=[types.Part(function_response=types.FunctionResponse(
                             name=action,
                             response={"result": {"answer": final_answer}}
@@ -1858,7 +1860,6 @@ class Agent:
             except NameError:
                 pass
 
-            # 백그라운드 최적화 트리거
             try:
                 import asyncio
                 if not hasattr(self, "optim_manager") or self.optim_manager is None:
@@ -2303,25 +2304,118 @@ class Agent:
         resp, _ = await self._call_llm_safe(self._build_user_message(prompt), use_tools=False)
         text = getattr(resp, "text", None) if not isinstance(resp, str) else resp
         return (text or "").strip()
+    def _looks_pathish(s: str) -> bool:
+    # 값 기반 경로/파일/커맨드 판별 (키 이름은 안봄)
+        if not isinstance(s, str): return False
+        if "/" in s or "\\" in s: return True
+        if re.match(r"^[A-Za-z]:\\", s): return True
+        if re.match(r"^\.?\.?[\\/]", s): return True
+        if re.match(r"^[\w\-. ]+\.[A-Za-z0-9]{1,8}$", s): return True
+        # 쉘 커맨드 느낌(백틱, ;, &&, |, >, < 등)
+        if any(t in s for t in ["`","&&","||",";"," | "," >"," <"]): return True
+        # 거의 단일 토큰(파일명/명령어 가능성)
+        if len(s) <= 64 and " " not in s and "\n" not in s:
+            return True
+        return False
+    async def _maybe_enrich_text_payload_strong(self, action: str, action_input: dict, tool_spec: dict,
+                                            min_threshold: int, min_chars: int):
+        """
+        - 도구 파라미터 중 '본문 텍스트' 성격의 값을 자동 탐지해 길이가 짧으면 보강
+        - 이 '한 번'의 LLM 호출에서 payload(보강 후)와 remark(최종 멘트)를 JSON으로 함께 수령
+        - remark는 self._closing_remark에 저장 → final_response에서 그대로 사용
+        - 키/도구명 하드코딩 금지: 값 패턴만 보고 판별
+        """
+        import re, json
 
-    async def _maybe_enrich_text_payload_strong(self, *, action: str, action_input: dict, tool_spec: dict, min_threshold: int, min_chars: int) -> dict:
-        key = self._pick_payload_field_fast(tool_spec, action_input or {})
-        if not key: return action_input
-        cur = action_input.get(key, "")
-        if not isinstance(cur, str) or len(cur.strip()) >= min_threshold:
-            return action_input
+        params = dict(action_input or {})
+        spec = tool_spec or {}
+        props = (spec.get("parameters") or {}).get("properties") or {}
 
-        print(f"[ENRICH] start action={action}, key=content, len={len((action_input or {}).get('content',''))} → target≥{min_chars}")
-        enriched = await self._compose_or_enrich(self.user_goal or "", cur, min_chars=min_chars)
-        print(f"[ENRICH] done len={len((action_input or {}).get('content',''))}")
-        if enriched and len(enriched) > len(cur):
-            print(f"[ENRICH] done key={key}, len {len(cur)} → {len(enriched)}")
-            new_args = dict(action_input or {})
-            new_args[key] = enriched
-            return new_args
-        
-        print(f"[ENRICH] fail/no-change key={key}, kept len={len(cur)}")
-        return action_input
+        def _looks_pathish(s: str) -> bool:
+            if not isinstance(s, str): return False
+            if "/" in s or "\\" in s: return True
+            if re.match(r"^[A-Za-z]:\\", s): return True
+            if re.match(r"^\.{0,2}[\\/]", s): return True
+            if re.match(r"^[\w\-. ]+\.[A-Za-z0-9]{1,8}$", s): return True
+            if any(t in s for t in ["`","&&","||",";"," | "," >"," <"]): return True
+            if len(s) <= 64 and " " not in s and "\n" not in s: return True
+            return False
+
+        # 후보 값 자동 탐지(키 이름 보지 않음)
+        candidates = []
+        for k, v in params.items():
+            if isinstance(v, str) and not _looks_pathish(v):
+                # 문장/코드/마크업 느낌이면 후보
+                if any(ch in v for ch in ["\n", ".", " ", "<", ">", "{", "}", "function", "class", "# ", "## "]):
+                    candidates.append((k, len(v)))
+
+        if not candidates:
+            setattr(self, "_closing_remark", None)
+            return params
+
+        # 가장 텍스트스러운 것(길이 기준 상위)을 대표 키로
+        candidates.sort(key=lambda x: x[1], reverse=True)
+        primary_key = candidates[0][0]
+        current_text = params.get(primary_key, "")
+
+        # 충분히 길면 스킵 (remark도 생성 안 함: 호출 수 절약 목적)
+        if isinstance(current_text, str) and len(current_text) >= min_threshold:
+            setattr(self, "_closing_remark", None)
+            return params
+
+        # 메시지 빌더(프로젝트 표준)
+        try:
+            from google.genai import types
+            def _msgs(t): return [types.Content(role="user", parts=[types.Part(text=t)])]
+        except Exception:
+            def _msgs(t): return [{"role":"user","parts":[{"text":t}]}]
+
+        # 동적 목표치 계산(있으면 사용)
+        tgt_chars = min_chars
+        if hasattr(self, "_calc_target_chars"):
+            try:
+                c = int(self._calc_target_chars())
+                if c > 0: tgt_chars = max(tgt_chars, c)
+            except Exception:
+                pass
+
+        # 한 번에 payload+remark 요청
+        prompt = (
+            "아래는 어떤 작업 도구에 넘길 입력 파라미터(JSON)입니다. 구조(키)와 타입은 유지하면서, "
+            "가장 '본문 텍스트'에 해당하는 값을 충분히 길고 구체적으로 보강해 주세요. "
+            "또한, 사용자에게 곧바로 보여줄 자연스러운 마무리 멘트(카에데 톤, 메타발화 금지)도 함께 주세요.\n\n"
+            f"[입력 파라미터]\n{params}\n\n"
+            f"[보강 목표 길이(문자)]: {tgt_chars}\n\n"
+            "반드시 아래 JSON 형식으로만 답변하세요(코드블록 금지):\n"
+            "{\n"
+            '  "payload": { /* 동일 키/타입 유지, 보강된 본문 반영 */ },\n'
+            '  "remark": "최종 멘트 한두 문장"\n'
+            "}\n"
+            "- 파일 경로나 명령/URL처럼 보이는 값은 절대 수정하지 마세요.\n"
+            "- remark는 방금 만든 payload(콘텐츠/디자인/요약)를 실제로 참조하는 자연스러운 문장으로.\n"
+        )
+
+        resp, _ = await self._call_llm_safe(_msgs(prompt), available_models=getattr(self, "available_models", None), use_tools=False)
+        text_out = getattr(resp, "text", "") if resp is not None else ""
+
+        # 코드블록/여분 제거 후 파싱
+        cleaned = re.sub(r"^```(?:json)?|```$", "", text_out, flags=re.MULTILINE).strip()
+        try:
+            data = json.loads(cleaned)
+        except Exception:
+            data = None
+
+        if isinstance(data, dict) and isinstance(data.get("payload"), dict):
+            new_params = dict(params)
+            new_params.update(data["payload"])
+            setattr(self, "_closing_remark", data.get("remark"))
+            if data.get("remark"):
+                print(f"[REMARK] captured len={len(data.get('remark') or '')}")
+            return new_params
+
+        # 실패 시 원본 유지 + remark 없음
+        setattr(self, "_closing_remark", None)
+        return params
     def _validate_action_input(self, action: str, action_input: dict) -> tuple[bool, dict]:
         """
         호출 직전 스키마 검증.
